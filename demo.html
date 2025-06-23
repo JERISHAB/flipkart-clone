@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .product-card {
+  display: flex;
+  padding: 16px 0;
+  border-bottom: 1px solid #e0e0e0;
+  gap: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.product-image img {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+}
+
+.product-details {
+  flex: 1;
+}
+
+.product-title {
+  font-size: 18px;
+  color: #2874f0;
+  margin-bottom: 5px;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #878787;
+  margin-bottom: 10px;
+}
+
+.rating-badge {
+  background-color: green;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.product-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  color: #212121;
+  line-height: 1.6;
+}
+
+.product-price-details {
+  min-width: 140px;
+  text-align: right;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #212121;
+  margin: 0;
+}
+
+.original-price {
+  font-size: 14px;
+  margin-top: 4px;
+  color: #878787;
+}
+
+.strike {
+  text-decoration: line-through;
+  margin-right: 6px;
+}
+
+.discount {
+
+  font-weight: 600;
+}
+
+.stock-warning {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.bank-offer {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+    </style>
+</head>
+<body>
+    <div class="product-card">
+        <div class="product-image">
+          <img src="images/products/k3310.png" alt="I Kall K3310" />
+        </div>
+      
+        <div class="product-details">
+          <h3 class="product-title">I Kall K3310</h3>
+          <div class="product-rating">
+            <span class="rating-badge">3.6 ★</span>
+            <span class="rating-text">67,837 Ratings & 7,542 Reviews</span>
+          </div>
+          <ul class="product-features">
+            <li>32 MB RAM | 32 MB ROM</li>
+            <li>4.5 cm (1.77 inch) Display</li>
+            <li>0.3MP Rear Camera</li>
+            <li>1000 mAh Battery</li>
+            <li>1 Year warranty for device and 6 Months for box accessories</li>
+          </ul>
+        </div>
+      
+        <div class="product-price-details">
+          <h2 class="price">₹675</h2>
+          <div class="original-price">
+            <span class="strike">₹999</span>
+            <span class="discount">32% off</span>
+          </div>
+          <p class="stock-warning">Only few left</p>
+          <p class="bank-offer">Bank Offer</p>
+        </div>
+      </div>
+      
+</body>
+</html>
