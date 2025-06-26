@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
+    <header class="lap-header">
       <nav class="nav-1">
         <img
           src="images/logos/flipkart-white-logo.svg"
@@ -108,6 +108,112 @@
         </span>
       </nav>
     </header>
+
+    <!-- START HEADER FOR 375px -->
+
+    <header class="header-375">
+      <nav class="mob-nav-1">
+
+        <div class="mob-nav-1-left">
+            <img
+            src="images/icons/mobile/nav-mob-arrow.svg"
+            alt="arrow-mob-nav"
+            class="arrow-mob-nav"
+            />
+            <img
+            src="images/logos/flipkart-mob-logo.svg"
+            alt="flipkart-logo"
+            class="logo-mob-nav"
+            />
+            <span class="mob-nav-1-head">Poco Mobiles</span>
+        </div>
+        
+
+        <div class="mob-nav-1-right">
+            <img
+            src="images/icons/mobile/mob-nav-search.svg"
+            alt="mob-nav-search"
+            class="mob-nav-search"
+            />
+            <img
+            src="images/icons/mobile/mob-nav-cart.svg"
+            alt="mob-nav-cart"
+            class="mob-nav-cart"
+            >
+            <span class="mob-nav-1-login">Login</span>
+        </div>
+      </nav>
+      <nav class="mob-nav-2">
+        <div class="mn-left">
+          <img
+            src="images/icons/mobile/mob-sort-icon.svg"
+            alt=""
+            class="mn-left-img"
+          />
+          <span class="mn-left-text"> Sort</span>
+        </div>
+        <div class="vertical-line"></div>
+        <div class="mn-right">
+          <img
+            src="images/icons/mobile/mob-filter-icon.svg"
+            alt=""
+            class="mn-right-img"
+          />
+          <span class="mn-right-text">Filter</span>
+        </div>
+      </nav>
+      <div class="extra-filter-mob">
+        <div class="div-5g">
+          <img src="images/icons/mobile/5g.svg" alt="" class="5g-img" />
+        <span class="text-5g"> 5G</span> 
+        </div>
+        <div class="price-range">
+          <img
+            src="images/icons/mobile/price-range.svg"
+            alt=""
+            class="price-range-img"
+          />
+          <p class="price-range-text" >Rs. 15000 - Rs. 20000</p>
+        </div>
+        <div class="new-launch">
+          <img
+            src="images/icons/mobile/new-launches.svg"
+            alt=""
+            class="new-launch-img"
+          />
+          <span class="new-launch-text">New Launches</span>
+        </div>
+      </div>
+      <p class="browse-para" id="browse-para" >
+        Are you browsing online for an ideal cellphone model that can cater to
+        your varied needs? If yes, then check out the different types of POCO
+        mobile phones that are available online. Explore a range of screen sizes
+        and battery capacities ranging from 4000 mAh to 6000 mAh and above. When
+        it comes to seamless connectivity, the collection got you sorted with
+        lightning-fast 5G capabilities. It ensures that you stay ahead of the
+        curve in the digital era. If you are looking for phones under 10000, you
+        can check out the POCO models using the filters available. When it comes
+        to processors, the selection offers a diverse range of options from
+        brands like Snapdragon and MediaTek, ensuring optimal performance and
+        efficiency. Choose from displays that suit your preferences, whether
+        it's Full HD, Full HD+, or vibrant AMOLED screens, each delivering an
+        immersive viewing experience. Check out the extensive range of POCO
+        smartphones online and explore the vast array of options available to
+        find the ideal fit for your needs and style. Shop now and elevate your
+        tech experience with a POCO mobile.</span>
+      </p>
+      <p class="mobile-list" id="mobile-list">          
+        <a href="">POCO C31</a>
+        | <a href="">POCO C31</a> 
+        | <a href="">POCO M4 Pro 5G</a> 
+        | <a href="">POCO M4 Pro AMOLED</a>
+        | <a href="">POCO X4 Pro</a>
+      </p>
+      <p id="readBtn" onclick="readMore()" >Read more</p>
+
+    </header>
+    <!-- END HEADER FOR 375px -->
+
     <section class="main-container">
       <div class="left-container">
         <div class="filters">
@@ -154,14 +260,24 @@
             />
             <input type="text" class="brand-filter-input" />
           </div>
-          <label class="brand-options"
-            ><input type="checkbox" />MOTOROLA
+          <label class="brand-options">
+            <input type="checkbox" filterName="brand" value="I Kall" /> I Kall
           </label>
-          <label class="brand-options"><input type="checkbox" />vivo </label>
-          <label class="brand-options"><input type="checkbox" />OPPO </label>
-          <label class="brand-options"><input type="checkbox" />Infinix</label>
-          <label class="brand-options"><input type="checkbox" />POCO </label>
-          <label class="brand-options"><input type="checkbox" />realme </label>
+          <label class="brand-options">
+            <input type="checkbox" filterName="brand" value="Redmi" /> Redmi
+          </label>
+          <label class="brand-options">
+            <input type="checkbox" filterName="brand" value="Motorola" /> Motorola
+          </label>
+          <label class="brand-options">
+            <input type="checkbox" filterName="brand" value="POCO" /> POCO
+          </label>
+          <label class="brand-options">
+            <input type="checkbox" filterName="brand" value="Samsung" /> Samsung
+          </label>
+          <label class="brand-options">
+            <input type="checkbox" filterName="brand" value="realme" /> realme
+          </label>
           <button class="see-more">154 MORE</button>
         </div>
         <div class="assured">
@@ -171,27 +287,43 @@
         <div class="cutomer-ratings">
           <p class="customer-head">Cutomer</p>
           <label class="rating-options">
-            <input type="checkbox" />
+            <input type="checkbox" value="4" filterName="rating" />
             <span>4 ★ & above</span>
           </label>
           <label class="rating-options">
-            <input type="checkbox" />
+            <input type="checkbox" value="4" filterName="rating"/>
             <span>3 ★ & above</span>
           </label>
         </div>
         <div class="ram">
           <p class="ram-head">RAM</p>
-          <label class="ram-options"><input type="checkbox" />4 GB</label>
-          <label class="ram-options"><input type="checkbox" />3 GB</label>
-          <label class="ram-options"><input type="checkbox" />2 GB</label>
-          <label class="ram-options"
-            ><input type="checkbox" />1GB and Below</label
-          >
-          <label class="ram-options"
-            ><input type="checkbox" />8 GB and Above</label
-          >
-          <label class="ram-options"><input type="checkbox" />6 GB</label>
-          <label class="ram-options"><input type="checkbox" />6 GB Above</label>
+          <label class="ram-options">
+            <input type="checkbox" value="4" filterName="ram" />4 GB
+          </label>
+        
+          <label class="ram-options">
+            <input type="checkbox" value="3" filterName="ram" />3 GB
+          </label>
+        
+          <label class="ram-options">
+            <input type="checkbox" value="2" filterName="ram" />2 GB
+          </label>
+        
+          <label class="ram-options">
+            <input type="checkbox" value="below1" filterName="ram" />1GB and Below
+          </label>
+        
+          <label class="ram-options">
+            <input type="checkbox" value="above8" filterName="ram" />8 GB and Above
+          </label>
+        
+          <label class="ram-options">
+            <input type="checkbox" value="6" filterName="ram" />6 GB
+          </label>
+        
+          <label class="ram-options">
+            <input type="checkbox" value="above6" filterName="ram" />6 GB Above
+          </label>
         </div>
         <div class="discount">
           <p class="discount-head">DISCOUNT</p>
@@ -219,31 +351,42 @@
             <a href="">Mobiles</a>
           </p>
           <p class="mobile-header-list">
-            <a href="">VIVO Mobiles</a> 
-            ,<a href="">Infinix Mobiles </a>
-            ,<a href="">Snexian Mobiles</a>
-            ,<a href="">realme Mobiles</a> 
-            ,<a href="">Samsung Mobiles></a> 
-            ,<a href="">APPLE Mobiles</a>
-            ,<a href="">POCO Mobiles</a> 
-            ,<a href="">Nokia Mobiles</a> 
-            ,<a href="">OPPO Mobiles</a>
-            ,<a href="">GIONEE Mobiles</a>
+            <a href="">VIVO Mobiles</a>
+            ,<a href="">Infinix Mobiles </a> ,<a href="">Snexian Mobiles</a> ,<a
+              href=""
+              >realme Mobiles</a
+            >
+            ,<a href="">Samsung Mobiles></a> ,<a href="">APPLE Mobiles</a> ,<a
+              href=""
+              >POCO Mobiles</a
+            >
+            ,<a href="">Nokia Mobiles</a> ,<a href="">OPPO Mobiles</a> ,<a
+              href=""
+              >GIONEE Mobiles</a
+            >
           </p>
-          <p class="paging-details" ><span class="paging-head" >Mobiles</span><span class="paging-text" >(Showing 1 – 24 products of 116 products)</span></p>
-          <p class="sortby" >
-            <span id="sortby-head" >Sorty By</span>
+          <p class="paging-details">
+            <span class="paging-head">Mobiles</span
+            ><span class="paging-text"
+              >(Showing 1 – 24 products of 116 products)</span
+            >
+          </p>
+          <p class="sortby">
+            <span id="sortby-head">Sorty By</span>
             <span>Popularity</span>
             <span>Price -- Low to High</span>
             <span>Price --Hight to Low</span>
             <span>Newest First</span>
           </p>
         </div>
-
+        <img src="images/icons/mobile/mobile-add.png" class="mob-add" alt="">
         <div class="" id="grid-sec"></div>
+        <div id="mobile-sec"></div> 
       </div>
     </section>
 
     <script src="script.js"></script>
   </body>
 </html>
+ 
+
