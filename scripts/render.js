@@ -1,4 +1,4 @@
-export function renderProductsDesktop1(dataArray) {
+export function renderProductsDesktop(dataArray) {
     let html = "";
 
     dataArray.forEach((product) => {
@@ -73,7 +73,7 @@ export function renderProductsDesktop1(dataArray) {
 
   }
 
- export function renderProductsMobile1(dataArray) {
+ export function renderProductsMobile(dataArray) {
     let html = "";
 
     dataArray.forEach((product) => {

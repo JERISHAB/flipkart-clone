@@ -1,6 +1,5 @@
-import { renderProductsDesktop1, renderProductsMobile1 } from "./render.js";
-import { applyFilters1 } from "./utils.js";
-// import { ramFilter } from "./filters.js";
+import { renderProductsDesktop, renderProductsMobile} from "./render.js";
+import { applyFilters, readMore } from "./utils.js";
 
 const fetchData = async () => {
   try {
@@ -10,263 +9,13 @@ const fetchData = async () => {
 
     const checkbox = document.querySelectorAll("input[type=checkbox]");
 
-    renderProductsDesktop1(originalArray);
-    renderProductsMobile1(originalArray);
+    renderProductsDesktop(originalArray);
+    renderProductsMobile(originalArray);
 
     checkbox.forEach((cb) => {
-      cb.addEventListener("change",() => applyFilters1(originalArray));
+      cb.addEventListener("change",() => applyFilters(originalArray));
       console.log("enteredd")
     });
-
-    // function applyFilters() {
-    //   const checked = document.querySelectorAll("input[type=checkbox]:checked");
-
-    //   let filterMap = {};
-
-    
-    //   checked.forEach((cb) => {
-    //     const name = cb.getAttribute("filterName");
-    //     const value = cb.value;
-
-    //     if (!filterMap[name]) {
-    //       filterMap[name] = [];
-    //     }
- 
-    //     filterMap[name].push(value);
-    //   });
-
-    //   const filteredArray = [];
-
-    //   for (let i = 0; i < originalArray.length; i++) {
-    //     const item = originalArray[i];
-    //     let match = true;
-
-    //     for (let key in filterMap) {
-    //       const selectedValues = filterMap[key];
-
-    //       if (key === "ram") {
-    //         const ram = parseInt(item.ram); 
-    //         let ramMatch = false;
-
-    //         for (let val of selectedValues) {
-    //           if (val === "below1" && ram <= 1) {
-    //             ramMatch = true;
-    //           } else if (val === "above8" && ram >= 8) {
-    //             ramMatch = true;
-    //           } else if (val === "above6" && ram > 6) {
-    //             ramMatch = true;
-    //           } else if (parseInt(val) === ram) {
-    //             ramMatch = true;
-    //           }
-    //         }
-
-    //         if (!ramMatch) {
-    //           match = false;
-    //           break;
-    //         }
-    //       } else if (key==="rating") {
-    //         const rating = parseFloat(item.rating)
-    //         let ratingMatch = false;
-
-    //         for (let val of selectedValues) {
-    //           if (val === "4" && rating >= 4) {
-    //             ratingMatch = true;
-    //           }
-    //           else if (val === "3" && rating >= 3) {
-    //             ratingMatch = true;
-    //           }
-    //         }
-    //         if (!ratingMatch) {
-    //           match = false;
-    //           break;
-    //         }
-    //       } else if (key === "discount_percent") {
-    //         const discount_percent = parseFloat(item.discount_percent)
-    //         console.log(discount_percent)
-    //         let discountMatch = false;
-
-    //         for (let val of selectedValues) {
-    //           if (val === "50" && discount_percent >= 50) {
-    //             discountMatch = true;
-    //           }
-    //           else if (val === "40" && discount_percent >= 40) {
-    //             discountMatch = true;
-    //           }
-    //           else if (val === "30" && discount_percent >= 30) {
-    //             discountMatch = true;
-    //           }
-    //           else if (val === "20" && discount_percent >= 20) {
-    //             discountMatch = true;
-    //           }
-    //           else if (val === "10" && discount_percent >= 10) {
-    //             discountMatch = true;
-    //           }
-    //         }
-    //         if (!discountMatch) {
-    //           match = false;
-    //           break;
-    //         }
-    //       } else {
-    //         if (!selectedValues.includes(item[key])) {
-    //           match = false;
-    //           break;
-    //         }
-    //       }
-    //     }
-
-    //     if (match) {
-    //       filteredArray.push(item);
-    //     }
-    //   }
-    //   renderProductsDesktop1(filteredArray);
-    //   renderProductsMobile1(filteredArray);
-    // }
-    
-
-    // function renderProductsDesktop(dataArray) {
-    //   let html = "";
-
-    //   dataArray.forEach((product) => {
-    //     const {
-    //       title,
-    //       brand,
-    //       original_price,
-    //       discount_percent,
-    //       ram,
-    //       rom,
-    //       display_size_cm,
-    //       display_size_inches,
-    //       camera_rear,
-    //       battery_capacity_mah,
-    //       warranty_device_years,
-    //       warranty_accessories_months,
-    //       rating,
-    //       rating_count,
-    //       exchange_offer,
-    //       review_count,
-    //       flipkart_assured,
-    //       stock_units_left,
-    //       offers,
-    //       categories,
-    //       image,
-    //     } = product;
-
-    //     const price = Math.floor(
-    //       original_price * ((100 - discount_percent) / 100)
-    //     );
-
-    //     html += `
-    //     <div class="product-card">
-    //         <div class="product-image-div">
-    //             <img src="images/icons/heart-img.svg" class="heart-img" alt="">
-    //             <img src="${image}" class="product-image" alt="I Kall K3310" />
-    //         </div>
-    //         <div class="product-info">
-    //             <div class="product-details">
-    //                 <h3 class="product-title">${title}</h3>
-    //                 <div class="product-rating">
-    //                     <span class="rating-box">${rating} ★</span>
-    //                     <span class="rating-text">${rating_count} Ratings & ${review_count} Reviews</span>
-    //                 </div>
-    //                 <ul class="product-features">
-    //                     <li>${ram} MB RAM | ${rom} MB ROM</li>
-    //                     <li>${display_size_cm} cm (${display_size_inches} inch) Display</li>
-    //                     <li>${camera_rear} Rear Camera</li>
-    //                     <li>${battery_capacity_mah} mAh Battery</li>
-    //                     <li>${warranty_device_years} Year warranty for device and ${warranty_accessories_months} for box accessories</li>
-    //                 </ul>
-    //             </div>
-                
-    //             <div class="product-price-details">
-    //             <div class="price-div">
-    //                 <h2 class="price">₹${price}</h2>
-    //                 <img src="images/logos/assured.png" class="assured-img">
-    //             </div>    
-    //                 <div class="original-price">
-    //                     <span class="strike">₹${original_price}</span>
-    //                     <span class="discount-price">${discount_percent}% off</span>
-    //                 </div>
-    //                 <p class="stock-warning">Only ${stock_units_left} left</p>
-    //                 <p class="exchange-text">Upto <span class="exchange-amount">₹${exchange_offer}</span> Off on Exchange</p>
-    //                 <p class="bank-offer">${offers}</p>
-    //             </div>
-
-    //         </div>
-    //   </div>`;
-    //   });
-    //   document.getElementById("grid-sec").innerHTML = html;
-    //   console.log("Desktop component rendered");
-    // }
-
-    // function renderProductsMobile(dataArray) {
-    //   let html = "";
-
-    //   dataArray.forEach((product) => {
-    //     const {
-    //       title,
-    //       original_price,
-    //       discount_percent,
-    //       brand,
-    //       rating,
-    //       rating_count,
-    //       flipkart_assured,
-    //       offers,
-    //       exchange_offer,
-    //       battery_capacity_mah,
-    //       warranty_device_years,
-    //       warranty_accessories_months,
-    //       display_size_cm,
-    //       display_size_inches,
-    //       ram,
-    //       rom,
-    //       camera_rear,
-    //       image,
-    //     } = product;
-
-    //     const price = Math.floor(
-    //       original_price * ((100 - discount_percent) / 100)
-    //     );
-
-    //     html += `
-    //     <div class="mcard">
-    //       <div class="mcard-top">
-    //         <img src="images/icons/mobile/m-heart.svg" class="m-heart" alt="">
-    //         <img src="${image}" class="mimg" alt="${title}">
-    //         <div class="minfo">
-    //           <div class="mname">${title}</div>
-    //           <div class="mrating">
-    //             <img src="images/icons/mobile/mob-star.svg" class="mstar">
-    //             <span class="mrate">(${rating_count})</span>
-    //             <img src="images/logos/assured.png" class="massured">
-    //           </div>
-    //           <div class="mprice">
-    //             <span class="mdiscount">↓${discount_percent}%</span>
-    //             <span class="mstrike">₹${original_price}</span>
-    //             <span class="msell">₹${price}</span>
-    //           </div>
-    //           <div class="mbank">
-    //             <img src="images/icons/mobile/wow-img.svg" alt="wow-img" class="wow-img">
-    //            <span class="serif" >₹9,499</span> with ${offers}
-    //           </div>
-    //           <div class="mexchange">
-    //             Upto <span class="serif" >₹${exchange_offer}</span> Off on Exchange
-    //           </div>
-    //           <div class="mwarranty">${warranty_device_years} year warranty by ${brand}</div>
-    //         </div>
-    //       </div>
-    //       <div class="mfeatures">
-    //         <div class="mfeature">${ram} MB RAM | ${rom} MB ROM</div>
-    //         <div class="mfeature">${display_size_cm} cm (${display_size_inches} inch) Display</div>
-    //         <div class="mfeature">${camera_rear} Rear Camera</div>
-    //         <div class="mfeature">${battery_capacity_mah} mAh Battery</div>
-    //         <div class="mfeature">${warranty_device_years} Year warranty for device and ${warranty_accessories_months} for box accessories</div>
-    //       </div>
-    //     </div>`;
-    //   });
-
-    //   document.getElementById("mobile-sec").innerHTML = html;
-    //   console.log("Mobile component rendered");
-    // }
   } catch (error) {
     console.log(error);
   }
@@ -274,40 +23,149 @@ const fetchData = async () => {
 
 fetchData();
 
-// Read more function
 
-let btn = document.getElementById("readBtn");
+// const rangevalue = document.querySelector(".slider-display");
+// const rangeInputvalue = document.querySelectorAll(".min-max-slider input")
 
-btn.onclick = function () {
-  console.log("readmore clicked");
+// let priceGap = 500;
 
-  let btn = document.getElementById("readBtn");
-  let para = document.getElementById("browse-para");
-  let mobList = document.getElementById("mobile-list");
-  if (para.style.overflow != "visible") {
-    para.style.overflow = "visible";
-    para.style.lineHeight = "16px";
-    para.style.maxHeight = "fit-content";
-    para.style.webkitLineClamp = "0";
+// const priceInputvalue = document.querySelectorAll(".min-max-text input")
+// for (let i = 0; i < priceInputvalue.length; i++){
+//   priceInputvalue[i].addEventListener("input", e => {
 
-    mobList.style.overflow = "visible";
-    mobList.style.lineHeight = "16px";
-    mobList.style.maxHeight = "fit-content";
-    mobList.style.webkitLineClamp = "0";
+//     let minp = parseInt(priceInputvalue[0].value)
+//     let maxp = parseInt(priceInputvalue[1].value)
+//     let diff = maxp - minp;
 
-    btn.innerHTML = "Read less";
+//     if (minp < 0) {
+//       priceInputvalue[0].value = 0;
+//       minp = 0;
+//     }
 
-  } else {
-    para.style.overflow = "hidden";
-    para.style.lineHeight = "10px";
-    para.style.maxHeight = "10px";
-    para.style.webkitLineClamp = "1";
+//     if (maxp > 10000) {
+//       priceInputvalue[1].value = 0;
+//       maxp = 10000
+//     }
 
-    mobList.style.overflow = "hidden";
-    mobList.style.lineHeight = "16px";
-    mobList.style.maxHeight = "16px";
-    mobList.style.webkitLineClamp = "1";
+//     if (minp > maxp - priceGap) {
+//       priceInputvalue[0].value = maxp - priceGap;
+//       minp = maxp - priceGap
 
-    btn.innerHTML = "Read more";
+//       if (minp < 0) {
+//         priceInputvalue[0].value = 0;
+//         minp = 0;
+//       }
+
+//       if (diff >= priceGap && priceGap && maxp <= rangeInputvalue[1].max) {
+//         if (e.target.className === "min-input") {
+//           rangeInputvalue[0].value = minp;
+//           let value1 = rangeInputvalue[0].max;
+//           rangevalue.style.left = `${(minp / value1) * 100}%`;
+//         }
+//         else {
+//           rangeInputvalue[1].value = maxp;
+//           let value2 = rangeInputvalue[1].max;
+//           rangevalue.style.right = `${100 - (maxp / value2) * 100}%`;
+//         }
+//       }
+//     }
+//   })
+
+//   for (let i = 0; i < rangeInputvalue.length; i++){
+//     rangeInputvalue[i].addEventListener("input", e => {
+//       let minVal = parseInt(rangeInputvalue[0].value)
+//       let maxVal = parseInt(rangeInputvalue[1].value)
+
+//       let diff = maxVal
+
+//       if (diff < priceGap) {
+//         if (e.target.className === "min-range") {
+//           rangeInputvalue[0].value = maxVal - priceGap
+//         } else {
+//           rangeInputvalue[1].value = minVal + priceGap;
+//         }
+//       } else {
+//         priceInputvalue[0].value = minVal;
+//         priceInputvalue[1].value = maxVal;
+//         rangevalue.style.left = `${(minVal / rangeInputvalue[0].max) * 100}%`;
+//         rangevalue.style.right = `${(maxVal / rangeInputvalue[1].max) * 100}%`;
+//       }
+//     })
+//   }
+
+
+//}
+
+
+const minRange = document.getElementById("min-range");
+const maxRange = document.getElementById("max-range");
+const track = document.getElementById("slider-track");
+const minSelect = document.getElementById("min-select");
+const maxSelect = document.getElementById("max-select");
+
+const prices = ["₹0", "₹10,000", "₹15,000", "₹20,000", "₹30,000", "₹30,000+"];
+
+function updateTrack() {
+  let min = parseInt(minRange.value);
+  let max = parseInt(maxRange.value);
+
+  if (max - min < 1) {
+    if (minRange === document.activeElement) {
+      minRange.value = max - 1;
+      min = max - 1;
+    } else {
+      maxRange.value = min + 1;
+      max = min + 1;
+    }
   }
+
+  const percentMin = (min / 5) * 100;
+  const percentMax = (max / 5) * 100;
+
+  track.style.background = `
+    linear-gradient(to right,
+      #ddd 0%,
+      #ddd ${percentMin}%,
+      #2196f3 ${percentMin}%,
+      #2196f3 ${percentMax}%,
+      #ddd ${percentMax}%,
+      #ddd 100%)`;
+
+  minSelect.value = min;
+  maxSelect.value = max;
 }
+
+function syncSlidersFromDropdowns() {
+  let min = parseInt(minSelect.value);
+  let max = parseInt(maxSelect.value);
+  if (max - min < 1) {
+    max = min + 1;
+    maxSelect.value = max;
+  }
+  minRange.value = min;
+  maxRange.value = max;
+  updateTrack();
+}
+
+minRange.addEventListener("input", updateTrack);
+maxRange.addEventListener("input", updateTrack);
+minSelect.addEventListener("change", syncSlidersFromDropdowns);
+maxSelect.addEventListener("change", syncSlidersFromDropdowns);
+
+document.getElementById("clear-btn").addEventListener("click", () => {
+  minRange.value = 0;
+  maxRange.value = 5;
+  minSelect.value = 0;
+  maxSelect.value = 5;
+  updateTrack();
+});
+
+window.onload = updateTrack;
+
+
+
+
+// Read more function
+let btn = document.getElementById("readBtn");
+btn.onclick = () => readMore () 
+  

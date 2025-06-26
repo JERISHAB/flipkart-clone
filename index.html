@@ -241,15 +241,47 @@
           <p>Mobiles</p>
         </div>
         <div class="price-filter">
-          <span class="price-head">PRICE</span>
-          <span class="clear-head">CLEAR</span>
-          <div class="drag-price-filter"></div>
-          <div class="min-max-price">
-            <input type="text" placeholder="Min" />
-            to
-            <input type="text" placeholder="Max" />
+          <div class="filter-header">
+            <span>PRICE</span>
+            <button id="clear-btn">CLEAR</button>
+          </div>
+        
+          <div class="slider-wrapper">
+            <div class="slider-track" id="slider-track"></div>
+            <input type="range" id="min-range" class="range" min="0" max="5" value="0">
+            <input type="range" id="max-range" class="range" min="0" max="5" value="5">
+          </div>
+        
+          <div class="dot-scale">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          
+        
+          <div class="dropdowns">
+            <select id="min-select">
+              <option value="0">₹0</option>
+              <option value="1">₹10,000</option>
+              <option value="2">₹15,000</option>
+              <option value="3">₹20,000</option>
+            </select>
+            <span>to</span>
+            <select id="max-select">
+              <option value="1">₹10,000</option>
+              <option value="2">₹15,000</option>
+              <option value="3">₹20,000</option>
+              <option value="4">₹30,000</option>
+              <option value="5">₹30,000+</option>
+            </select>
           </div>
         </div>
+        
+        
+        
         <div class="brand-filter">
           <p class="brand-head">Brand</p>
           <div class="brand-search">
@@ -277,7 +309,7 @@
           </label>
           <label class="brand-options">
             <input type="checkbox" filterName="brand" value="realme" /> realme
-          </label>
+          </label>   
           <button class="see-more">154 MORE</button>
         </div>
         <div class="assured">

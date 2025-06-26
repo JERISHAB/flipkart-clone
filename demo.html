@@ -6,155 +6,71 @@
     <title>Document</title>
     <style>
 
-.mcard {
-  padding: 12px;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-  font-family: Arial, sans-serif;
-  width: 100%;
-  box-sizing: border-box;
+.wrapper{
+  margin: 100px;
+  padding: 20px;
+  background-color: antiquewhite;
+  width: 400px;
 }
 
-.mcard-top {
+.price-input{
   display: flex;
-  gap: 12px;
 }
 
-.mimg {
-  width: 100px;
-  height: 120px;
-  object-fit: cover;
-  flex-shrink: 0;
+.slider{
+  margin-top: 30px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: grey;
 }
-
-.minfo {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.mname {
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: #212121;
-}
-
-.mrating {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 6px;
-}
-
-.mstar {
-  height: 12px;
-}
-
-.mrate {
-  font-size: 12px;
-  color: #777;
-}
-
-.massured {
-  height: 16px;
-}
-
-.mprice {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 4px;
-}
-
-.mdiscount {
-  font-size: 14px;
-  font-weight: bold;
-  color: #388e3c;
-}
-
-.mstrike {
-  font-size: 14px;
-  color: #999;
-  text-decoration: line-through;
-}
-
-.msell {
-  font-size: 15px;
-  font-weight: bold;
-  color: #212121;
-}
-
-.mbank {
-  font-size: 12px;
-  color: #2962ff;
-  margin-bottom: 4px;
-}
-
-.mextra,
-.mwarranty {
-  font-size: 12px;
-  color: #555;
-  margin-bottom: 2px;
-}
-
-.mfeatures {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 10px;
-}
-
-.mfeature {
-  font-size: 12px;
-  color: #666;
-  border: 1px solid #ccc;
-  padding: 4px 6px;
-  border-radius: 4px;
-  background-color: #f9f9f9;
-}
-
-.m-heart{
+.slider .progress {
+  background-color: aquamarine;
   position: absolute;
-  left: 50%;
-  height: 10px;
+  height: 5px;
+  right: 40%;
+  left: 25%;
 }
 
+.range-input{
+  position: relative;
+}
+
+.range-input input{
+  position: absolute;
+  top: -5px;
+  height: 5px;
+  width: 100%;
+  appearance: none;
+}
 
     </style>
 </head>
 <body>
-  <div class="mcard">
-    <div class="mcard-top">
-      <img src="images/icons/mobile/m-heart.svg" class="m-heart" alt="">
-      <img src="images/products/prod-1.png" class="mimg" alt="realme C61">
-      <div class="minfo">
-        <div class="mname">realme C61 (4 GB + 128 GB)</div>
-        <div class="mrating">
-          <img src="images/icons/mobile/mob-star.svg" class="mstar" alt="rating star">
-          <span class="mrate">(67,837)</span>
-          <img src="images/logos/assured.png" class="massured" alt="assured">
-        </div>
-        <div class="mprice">
-          <span class="mdiscount">↓32%</span>
-          <span class="mstrike">₹999</span>
-          <span class="msell">₹675</span>
-        </div>
-        <div class="mbank">
-          <img src="images/icons/mobile/wow-img.svg" alt="wow-img" class="wow-img">
-          ₹9,499 with Bank offer</div>
-        <div class="mextra">Upto ₹8,300 Off on Exchange Offer</div>
-        <div class="mwarranty">1 year warranty by POCO</div>
+  <div class="wrapper">
+    <div class="price-input">
+      <div class="field">
+        <span>Min</span>
+        <input type="number" name="" class="input-min" value="2500" id="">
       </div>
-    </div> 
-    <div class="mfeatures">
-      <div class="mfeature">32 MB RAM | B ROM</div>
-      <div class="mfeature">4.5 cm (1.77 inch) Display</div>
-      <div class="mfeature">0.3MP Rear Camera</div>
-      <div class="mfeature">1000 mAh Battery</div>
-      <div class="mfeature">1 Year warranty for device and 6 Months for box accessories</div>
+      <div class="separator">-</div>
+      <div class="field">
+        <span>Max</span>
+        <input type="number" name="" id="" class="input-max" value="7500">
+      </div>
     </div>
-  </div>      
+    <div class="slider">
+      <div class="progress"></div>
+    </div>  
+    <div class="range-input">
+      <input type="range" name="" class="range-min" min="0" max="10000" value="2500">
+      <input type="range" name="" class="range-max" min="0" max="10000" value="7500">
+    </div>
+  </div>
+  
+
+  <script>
+
+
+  </script>
 </body>
 </html>
-
