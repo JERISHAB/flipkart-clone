@@ -43,7 +43,9 @@ export function syncSlidersFromDropdowns1(
   minRange,
   maxRange,
   minSelect,
-  maxSelect
+  maxSelect,
+  track,
+  originalArray
 ) {
   let min = parseInt(minSelect.value);
   let max = parseInt(maxSelect.value);
@@ -53,5 +55,10 @@ export function syncSlidersFromDropdowns1(
   }
   minRange.value = min;
   maxRange.value = max;
-  updateTrack1();
+  updateTrack1(minRange,
+  maxRange,
+  track,
+  originalArray,
+  minSelect,
+  maxSelect);
 }

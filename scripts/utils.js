@@ -6,9 +6,6 @@ export function applyFilters(originalArray) {
 
   const minRange = document.getElementById("min-range");
   const maxRange = document.getElementById("max-range");
-  // const track = document.getElementById("slider-track");
-  // const minSelect = document.getElementById("min-select");
-  // const maxSelect = document.getElementById("max-select");
   
   let filterMap = {};
 
