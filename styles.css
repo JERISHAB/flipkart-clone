@@ -576,7 +576,7 @@ font-size: 13px;
 
 /* END FILTER SECTION */
 
-/* START RIGHT CONTAINER */
+/* END RIGHT CONTAINER */
 .header-375 {
   display: none;
 }
@@ -616,7 +616,7 @@ font-size: 13px;
   position: absolute;
   width: 100%;
   pointer-events: all;
-  -webkit-appearance: none;
+  appearance: none;
   background: none;
   height: 36px;
   top: 0;

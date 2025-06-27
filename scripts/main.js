@@ -16,6 +16,11 @@ const fetchData = async () => {
       cb.addEventListener("change",() => applyFilters(originalArray));
       console.log("enteredd")
     });
+
+
+
+
+
   } catch (error) {
     console.log(error);
   }
@@ -23,79 +28,7 @@ const fetchData = async () => {
 
 fetchData();
 
-
-// const rangevalue = document.querySelector(".slider-display");
-// const rangeInputvalue = document.querySelectorAll(".min-max-slider input")
-
-// let priceGap = 500;
-
-// const priceInputvalue = document.querySelectorAll(".min-max-text input")
-// for (let i = 0; i < priceInputvalue.length; i++){
-//   priceInputvalue[i].addEventListener("input", e => {
-
-//     let minp = parseInt(priceInputvalue[0].value)
-//     let maxp = parseInt(priceInputvalue[1].value)
-//     let diff = maxp - minp;
-
-//     if (minp < 0) {
-//       priceInputvalue[0].value = 0;
-//       minp = 0;
-//     }
-
-//     if (maxp > 10000) {
-//       priceInputvalue[1].value = 0;
-//       maxp = 10000
-//     }
-
-//     if (minp > maxp - priceGap) {
-//       priceInputvalue[0].value = maxp - priceGap;
-//       minp = maxp - priceGap
-
-//       if (minp < 0) {
-//         priceInputvalue[0].value = 0;
-//         minp = 0;
-//       }
-
-//       if (diff >= priceGap && priceGap && maxp <= rangeInputvalue[1].max) {
-//         if (e.target.className === "min-input") {
-//           rangeInputvalue[0].value = minp;
-//           let value1 = rangeInputvalue[0].max;
-//           rangevalue.style.left = `${(minp / value1) * 100}%`;
-//         }
-//         else {
-//           rangeInputvalue[1].value = maxp;
-//           let value2 = rangeInputvalue[1].max;
-//           rangevalue.style.right = `${100 - (maxp / value2) * 100}%`;
-//         }
-//       }
-//     }
-//   })
-
-//   for (let i = 0; i < rangeInputvalue.length; i++){
-//     rangeInputvalue[i].addEventListener("input", e => {
-//       let minVal = parseInt(rangeInputvalue[0].value)
-//       let maxVal = parseInt(rangeInputvalue[1].value)
-
-//       let diff = maxVal
-
-//       if (diff < priceGap) {
-//         if (e.target.className === "min-range") {
-//           rangeInputvalue[0].value = maxVal - priceGap
-//         } else {
-//           rangeInputvalue[1].value = minVal + priceGap;
-//         }
-//       } else {
-//         priceInputvalue[0].value = minVal;
-//         priceInputvalue[1].value = maxVal;
-//         rangevalue.style.left = `${(minVal / rangeInputvalue[0].max) * 100}%`;
-//         rangevalue.style.right = `${(maxVal / rangeInputvalue[1].max) * 100}%`;
-//       }
-//     })
-//   }
-
-
-//}
-
+// PRICE FILTER SLIDER
 
 const minRange = document.getElementById("min-range");
 const maxRange = document.getElementById("max-range");
@@ -130,6 +63,8 @@ function updateTrack() {
       #2196f3 ${percentMax}%,
       #ddd ${percentMax}%,
       #ddd 100%)`;
+  
+  applyFilters()
 
   minSelect.value = min;
   maxSelect.value = max;
@@ -161,9 +96,6 @@ document.getElementById("clear-btn").addEventListener("click", () => {
 });
 
 window.onload = updateTrack;
-
-
-
 
 // Read more function
 let btn = document.getElementById("readBtn");

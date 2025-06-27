@@ -3,6 +3,9 @@ import { discountFilter, ramFilter, ratingFilter } from "./filters.js";
 
 export function applyFilters(originalArray) {
   const checked = document.querySelectorAll("input[type=checkbox]:checked");
+
+  
+
   let filterMap = {};
 
   checked.forEach((cb) => {
@@ -74,9 +77,8 @@ export function applyFilters(originalArray) {
   renderProductsMobile(filteredArray);
 }
 
-
 export function readMore() {
-      let btn = document.getElementById("readBtn");
+  let btn = document.getElementById("readBtn");
   let para = document.getElementById("browse-para");
   let mobList = document.getElementById("mobile-list");
   if (para.style.overflow != "visible") {
@@ -91,7 +93,6 @@ export function readMore() {
     mobList.style.webkitLineClamp = "0";
 
     btn.innerHTML = "Read less";
-
   } else {
     para.style.overflow = "hidden";
     para.style.lineHeight = "10px";
