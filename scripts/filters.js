@@ -42,3 +42,19 @@ export function discountFilter(discountMatch,discount_percent, selectedValues) {
     }
     return discountMatch
 }
+
+export function sliderFilter(sliderMatch, price, selectedValues) {
+  const prices = [0, 10000, 15000, 20000, 30000, 30000];
+  
+  console.log(selectedValues[0],price,selectedValues[1])
+
+  if ((selectedValues[1] === "5") && (price >= prices[selectedValues[0]])) {
+    sliderMatch = true;
+  }
+  else if (price >= prices[selectedValues[0]] && price <= prices[selectedValues[1]]) {
+    sliderMatch = true;
+    
+  }
+  console.log(sliderMatch);
+  return sliderMatch;
+}

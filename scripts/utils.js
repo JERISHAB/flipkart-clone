@@ -1,12 +1,22 @@
 import { renderProductsDesktop, renderProductsMobile } from "./render.js";
-import { discountFilter, ramFilter, ratingFilter } from "./filters.js";
+import { discountFilter, ramFilter, ratingFilter,sliderFilter} from "./filters.js";
 
 export function applyFilters(originalArray) {
   const checked = document.querySelectorAll("input[type=checkbox]:checked");
 
+  const minRange = document.getElementById("min-range");
+  const maxRange = document.getElementById("max-range");
+  // const track = document.getElementById("slider-track");
+  // const minSelect = document.getElementById("min-select");
+  // const maxSelect = document.getElementById("max-select");
   
-
   let filterMap = {};
+
+  // for slider
+  if (!filterMap["slider"]) {
+    filterMap["slider"] = [];
+  }
+  filterMap["slider"].push(minRange.value,maxRange.value);
 
   checked.forEach((cb) => {
     const name = cb.getAttribute("filterName");
@@ -61,6 +71,14 @@ export function applyFilters(originalArray) {
           match = false;
           break;
         }
+      } else if (key==="slider") { 
+        const price = parseFloat(item.price)
+        let sliderMatch = false;
+        sliderMatch = sliderFilter(sliderMatch, price, selectedValues)
+        if (!sliderMatch) {
+          match = false;
+          break;
+        }
       } else {
         if (!selectedValues.includes(item[key])) {
           match = false;
@@ -106,4 +124,13 @@ export function readMore() {
 
     btn.innerHTML = "Read more";
   }
+}
+
+
+
+export function setPrice(originalArray) {
+  originalArray.forEach(product => {
+    product["price"] = Math.floor(product.original_price * ((100 - product.discount_percent) / 100));
+  });
+ return originalArray
 }

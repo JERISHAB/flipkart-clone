@@ -5,6 +5,7 @@ export function renderProductsDesktop(dataArray) {
       const {
         title,
         brand,
+        price,
         original_price,
         discount_percent,
         ram,
@@ -25,10 +26,6 @@ export function renderProductsDesktop(dataArray) {
         categories,
         image,
       } = product;
-
-      const price = Math.floor(
-        original_price * ((100 - discount_percent) / 100)
-      );
 
       html += `
       <div class="product-card">
@@ -79,6 +76,7 @@ export function renderProductsDesktop(dataArray) {
     dataArray.forEach((product) => {
       const {
         title,
+        price,
         original_price,
         discount_percent,
         brand,
@@ -98,9 +96,6 @@ export function renderProductsDesktop(dataArray) {
         image,
       } = product;
 
-      const price = Math.floor(
-        original_price * ((100 - discount_percent) / 100)
-      );
 
       html += `
       <div class="mcard">
