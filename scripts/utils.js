@@ -1,4 +1,4 @@
-import { renderProductsDesktop, renderProductsMobile } from "./render.js";
+import { renderFilterTag, renderProductsDesktop, renderProductsMobile } from "./render.js";
 import { discountFilter, ramFilter, ratingFilter,sliderFilter} from "./filters.js";
 
 export function applyFilters(originalArray) {
@@ -6,7 +6,7 @@ export function applyFilters(originalArray) {
 
   const minRange = document.getElementById("min-range");
   const maxRange = document.getElementById("max-range");
-  
+
   let filterMap = {};
 
   // for slider
@@ -88,8 +88,12 @@ export function applyFilters(originalArray) {
       filteredArray.push(item);
     }
   }
+
+  renderFilterTag(filterMap)
+
   renderProductsDesktop(filteredArray);
   renderProductsMobile(filteredArray);
+  console.log("rendering in utils")
 }
 
 export function readMore() {

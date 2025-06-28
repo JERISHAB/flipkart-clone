@@ -45,8 +45,6 @@ export function discountFilter(discountMatch,discount_percent, selectedValues) {
 
 export function sliderFilter(sliderMatch, price, selectedValues) {
   const prices = [0, 10000, 15000, 20000, 30000, 30000];
-  
-  console.log(selectedValues[0],price,selectedValues[1])
 
   if ((selectedValues[1] === "5") && (price >= prices[selectedValues[0]])) {
     sliderMatch = true;
@@ -55,6 +53,21 @@ export function sliderFilter(sliderMatch, price, selectedValues) {
     sliderMatch = true;
     
   }
-  console.log(sliderMatch);
   return sliderMatch;
+}
+
+export function filterSelect(minSelect, maxSelect, min, max) {
+  for (let i = 0; i < minSelect.options.length; i++){
+    if (minSelect.options[i].value >= max)
+      minSelect.options[i].style.display = "none"
+    else
+    minSelect.options[i].style.display = "block";
+  }
+  for (let i = 0; i < maxSelect.options.length; i++){
+    if (maxSelect.options[i].value <= min)
+      maxSelect.options[i].style.display = "none"
+    else
+    maxSelect.options[i].style.display = "block";
+
+  }
 }

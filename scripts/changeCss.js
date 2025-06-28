@@ -1,3 +1,4 @@
+import { filterSelect } from "./filters.js";
 import { applyFilters } from "./utils.js";
 
 export function updateTrack1(
@@ -35,8 +36,12 @@ export function updateTrack1(
 
   applyFilters(originalArray);
 
+
+
   minSelect.value = min;
   maxSelect.value = max;
+
+  filterSelect(minSelect, maxSelect, min, max);
 }
 
 export function syncSlidersFromDropdowns1(
@@ -62,3 +67,5 @@ export function syncSlidersFromDropdowns1(
   minSelect,
   maxSelect);
 }
+
+

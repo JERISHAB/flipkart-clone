@@ -1,6 +1,6 @@
-import { renderProductsDesktop, renderProductsMobile} from "./render.js";
+import { renderProductsDesktop, renderProductsMobile } from "./render.js";
 import { applyFilters, readMore, setPrice } from "./utils.js";
-import { updateTrack1 , syncSlidersFromDropdowns1} from "./changeCss.js"
+import { updateTrack1, syncSlidersFromDropdowns1 } from "./changeCss.js";
 const fetchData = async () => {
   try {
     const res = await fetch("./data.json");
@@ -11,6 +11,7 @@ const fetchData = async () => {
 
     renderProductsDesktop(originalArray);
     renderProductsMobile(originalArray);
+    console.log("rendering in main")
 
     checkbox.forEach((cb) => {
       cb.addEventListener("change", () => applyFilters(originalArray));
@@ -26,10 +27,24 @@ const fetchData = async () => {
     const maxSelect = document.getElementById("max-select");
 
     minRange.addEventListener("input", () =>
-      updateTrack1(minRange, maxRange, track, originalArray , minSelect,maxSelect)
+      updateTrack1(
+        minRange,
+        maxRange,
+        track,
+        originalArray,
+        minSelect,
+        maxSelect
+      )
     );
     maxRange.addEventListener("input", () =>
-      updateTrack1(minRange, maxRange, track, originalArray , minSelect,maxSelect)
+      updateTrack1(
+        minRange,
+        maxRange,
+        track,
+        originalArray,
+        minSelect,
+        maxSelect
+      )
     );
     minSelect.addEventListener("change", () =>
       syncSlidersFromDropdowns1(
@@ -52,13 +67,21 @@ const fetchData = async () => {
       )
     );
 
-    document.getElementById("clear-btn").addEventListener("click", () => {
+    document.getElementById("clear-btn-price").addEventListener("click", () => {
       minRange.value = 0;
       maxRange.value = 5;
       minSelect.value = 0;
       maxSelect.value = 5;
-      updateTrack1(minRange, maxRange, track, originalArray , minSelect,maxSelect);
+      updateTrack1(
+        minRange,
+        maxRange,
+        track,
+        originalArray,
+        minSelect,
+        maxSelect
+      );
     });
+
 
   } catch (error) {
     console.log(error);
@@ -69,5 +92,4 @@ fetchData();
 
 // Read more function
 let btn = document.getElementById("readBtn");
-btn.onclick = () => readMore () 
-  
+btn.onclick = () => readMore();

@@ -145,13 +145,19 @@ body {
 }
 
 .filter-tag {
+  display: inline-block;
   background-color: rgb(212, 212, 212);
-  padding: 5px;
+  padding: 8px;
+  margin: 5px;
 }
 
 .filter-head {
   font-weight: 600;
   font-size: 18px;
+}
+
+.remove-tag{
+  margin-right: 10px;
 }
 
 .filter-clear-all {
@@ -598,7 +604,7 @@ font-size: 13px;
   margin-bottom: 10px;
 }
 
-#clear-btn {
+#clear-btn-price {
   background: none;
   border: none;
   color: #007bff;

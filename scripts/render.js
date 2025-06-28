@@ -1,33 +1,33 @@
 export function renderProductsDesktop(dataArray) {
-    let html = "";
+  let html = "";
 
-    dataArray.forEach((product) => {
-      const {
-        title,
-        brand,
-        price,
-        original_price,
-        discount_percent,
-        ram,
-        rom,
-        display_size_cm,
-        display_size_inches,
-        camera_rear,
-        battery_capacity_mah,
-        warranty_device_years,
-        warranty_accessories_months,
-        rating,
-        rating_count,
-        exchange_offer,
-        review_count,
-        flipkart_assured,
-        stock_units_left,
-        offers,
-        categories,
-        image,
-      } = product;
+  dataArray.forEach((product) => {
+    const {
+      title,
+      brand,
+      price,
+      original_price,
+      discount_percent,
+      ram,
+      rom,
+      display_size_cm,
+      display_size_inches,
+      camera_rear,
+      battery_capacity_mah,
+      warranty_device_years,
+      warranty_accessories_months,
+      rating,
+      rating_count,
+      exchange_offer,
+      review_count,
+      flipkart_assured,
+      stock_units_left,
+      offers,
+      categories,
+      image,
+    } = product;
 
-      html += `
+    html += `
       <div class="product-card">
           <div class="product-image-div">
               <img src="images/icons/heart-img.svg" class="heart-img" alt="">
@@ -65,39 +65,37 @@ export function renderProductsDesktop(dataArray) {
 
           </div>
     </div>`;
-    });
-    document.getElementById("grid-sec").innerHTML = html;
+  });
+  document.getElementById("grid-sec").innerHTML = html;
+}
 
-  }
+export function renderProductsMobile(dataArray) {
+  let html = "";
 
- export function renderProductsMobile(dataArray) {
-    let html = "";
+  dataArray.forEach((product) => {
+    const {
+      title,
+      price,
+      original_price,
+      discount_percent,
+      brand,
+      rating,
+      rating_count,
+      flipkart_assured,
+      offers,
+      exchange_offer,
+      battery_capacity_mah,
+      warranty_device_years,
+      warranty_accessories_months,
+      display_size_cm,
+      display_size_inches,
+      ram,
+      rom,
+      camera_rear,
+      image,
+    } = product;
 
-    dataArray.forEach((product) => {
-      const {
-        title,
-        price,
-        original_price,
-        discount_percent,
-        brand,
-        rating,
-        rating_count,
-        flipkart_assured,
-        offers,
-        exchange_offer,
-        battery_capacity_mah,
-        warranty_device_years,
-        warranty_accessories_months,
-        display_size_cm,
-        display_size_inches,
-        ram,
-        rom,
-        camera_rear,
-        image,
-      } = product;
-
-
-      html += `
+    html += `
       <div class="mcard">
         <div class="mcard-top">
           <img src="images/icons/mobile/m-heart.svg" class="m-heart" alt="">
@@ -132,8 +130,46 @@ export function renderProductsDesktop(dataArray) {
           <div class="mfeature">${warranty_device_years} Year warranty for device and ${warranty_accessories_months} for box accessories</div>
         </div>
       </div>`;
-    });
+  });
 
-    document.getElementById("mobile-sec").innerHTML = html;
+  document.getElementById("mobile-sec").innerHTML = html;
+}
 
+export function renderFilterTag(filterMap) {
+  const filterContainer = document.getElementById("active-filters");
+  console.log(filterMap);
+  let html = "";
+  for (let key in filterMap) {
+    console.log("key : ", key);
+    const filters = filterMap[key];
+ 
+    if (key === "slider") {
+      const prices = [0, 10000, 15000, 20000, 30000, "30000+"];
+
+      let min;
+      let max = prices[filters[1]];
+
+      if (filters[0] === "0") {
+        min = "Min";
+      } else {
+        min = prices[filters[0]].toString();
+      }
+
+      html += `  <span class="filter-tag">
+          <span class="remove-tag">✕</span>${min}-${max}
+       </span>`;
+      
+    } else {
+      console.log("filters : ", filters);
+      for (let i = 0; i < filters.length; i++) {
+        console.log("filter : ", filters[i]);
+
+        html += `  <span class="filter-tag">
+          <span class="remove-tag">✕</span>${filters[i]}
+       </span>`;
+      }
+    }
   }
+
+  filterContainer.innerHTML = html;
+}
