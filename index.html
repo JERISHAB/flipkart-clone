@@ -9,11 +9,19 @@
   <body>
     <header class="lap-header">
       <nav class="nav-1">
-        <img
-          src="images/logos/flipkart-white-logo.svg"
-          class="flipkart-logo"
-          alt=""
-        />
+        <div class="logo-div">
+            <!-- <img src="images/logos/flipkart-og-logo.png" class="flipkart-logo" alt=""/> -->
+             <div class="flipkart-logo"></div>
+          <div class="sub-logo-div">
+            <span class="sub-logo" >
+              <span class="sub-logo-1">Explore</span>
+              <span class="sub-logo-2">Plus</span>
+            </span>
+            <img src="images/logos/yellow-vector.png" alt="" class="yellow-vector">
+          </div>
+
+        </div>
+
         <div class="nav-search">
           <input
             type="text"
@@ -35,7 +43,7 @@
           <img
             src="images/icons/more-dropdown.svg"
             alt="dropdown"
-            class="more-dropdown-img"
+            class="more-dropdown-img"  
           />
         </div>
         <div class="nav-cart">
@@ -53,7 +61,7 @@
           />
         </span>
         <span class="nav-2-div">
-          <span class="nav-2-heads">TV & Appliances</span>
+          <span class="nav-2-heads">TVs & Appliances</span>
           <img
             src="images/icons/nav-2-arrow.svg"
             alt=""
@@ -245,12 +253,13 @@
             <span>PRICE</span>
             <button id="clear-btn-price">CLEAR</button>
           </div>
-        
+          <img src="images/icons/slider-bg.png" alt="" class="slider-bg">
           <div class="slider-wrapper">
             <div class="slider-track" id="slider-track"></div>
             <input type="range" id="min-range" class="range" min="0" max="5" value="0">
             <input type="range" id="max-range" class="range" min="0" max="5" value="5">
           </div>
+
       
           <div class="dot-scale">
             <span class="dot"></span>
@@ -264,7 +273,7 @@
         
           <div class="dropdowns">
             <select id="min-select">
-              <option value="0">₹0</option>
+              <option value="0">Min</option>
               <option value="1">₹10,000</option>
               <option value="2">₹15,000</option>
               <option value="3">₹20,000</option>
@@ -283,14 +292,14 @@
         
         
         <div class="brand-filter">
-          <p class="brand-head">Brand</p>
+          <p class="brand-head">BRAND</p>
           <div class="brand-search">
             <img
               src="images/icons/search-icon-brand.svg"
               alt=""
               class="search-brand"
             />
-            <input type="text" class="brand-filter-input" />
+            <input type="text" class="brand-filter-input" placeholder=" Search Brand"/>
           </div>
           <label class="brand-options">
             <input type="checkbox" filterName="brand" value="I Kall" /> I Kall
@@ -420,5 +429,4 @@
     <script type="module" src="./scripts/main.js"></script>
   </body>
 </html>
- 
-
+  
