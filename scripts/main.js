@@ -1,22 +1,37 @@
 import { renderProductsDesktop, renderProductsMobile } from "./render.js";
-import { applyFilters, readMore, setPrice } from "./utils.js";
+import { applyFilters, readMore, setPrice, sortProducts } from "./utils.js";
 import { updateTrack1, syncSlidersFromDropdowns1 } from "./changeCss.js";
+
+let originalArray = [];
+let currentFilteredArray = [];
+let currentSortType = null;
+
 const fetchData = async () => {
   try {
     const res = await fetch("./data.json");
     const fetchData = await res.json();
-    const originalArray = setPrice(fetchData.products);
+    originalArray = setPrice(fetchData.products);
+    currentFilteredArray = [...originalArray];
 
+     setupSortEvents();
+     renderAndSort(currentFilteredArray);
+
+        
+    // renderProductsDesktop(originalArray);
+    // renderProductsMobile(originalArray);
+    // console.log("rendering in main")
+
+    // checkbox.forEach((cb) => {
+    //   cb.addEventListener("change", () => applyFilters(originalArray));
+    //   console.log("enteredd");
+    // });
+   
     const checkbox = document.querySelectorAll("input[type=checkbox]");
-
-    renderProductsDesktop(originalArray);
-    renderProductsMobile(originalArray);
-    console.log("rendering in main")
-
     checkbox.forEach((cb) => {
-      cb.addEventListener("change", () => applyFilters(originalArray));
-      console.log("enteredd");
+      cb.addEventListener("change", () => applyFilters(originalArray, updateFilteredAndRender));
     });
+
+
 
     // PRICE FILTER SLIDER
 
@@ -81,15 +96,39 @@ const fetchData = async () => {
         maxSelect
       );
     });
-
-
   } catch (error) {
     console.log(error);
   }
 };
+
+
+function renderAndSort(array) {
+  const sorted = currentSortType ? sortProducts(array, currentSortType) : array;
+  renderProductsDesktop(sorted);
+  renderProductsMobile(sorted);
+}
+
+function updateFilteredAndRender(filteredArray) {
+  currentFilteredArray = filteredArray;
+  renderAndSort(currentFilteredArray);
+}
+ 
+function setupSortEvents() {
+  const sortOptions = document.querySelectorAll(".sort-option");
+  sortOptions.forEach((option) => {
+    option.addEventListener("click", () => {
+      sortOptions.forEach((o) => o.classList.remove("active"));
+      option.classList.add("active");
+
+      currentSortType = option.getAttribute("data-sort");
+      renderAndSort(currentFilteredArray);
+    });
+  });
+}
 
 fetchData();
 
 // Read more function
 let btn = document.getElementById("readBtn");
 btn.onclick = () => readMore();
+
