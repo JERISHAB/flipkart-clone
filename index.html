@@ -170,6 +170,96 @@
           <span class="mn-right-text">Filter</span>
         </div>
       </nav>
+      <div id="m-filter-wrapper" class="m-filter-hidden">
+        <div class="m-filter-header">
+          <button class="m-back-btn">←</button>
+          <h2>Filters</h2>
+          <button id="m-clear-btn">Clear Filters</button>
+        </div>
+      
+        <div class="m-filter-body">
+          <div class="m-filter-tabs">
+            <ul>
+              <li class="m-tab active" data-tab="price">Price</li>
+              <li class="m-tab" data-tab="brand">Brand <span class="m-count">2</span></li>
+              <li class="m-tab" data-tab="fassured">F-Assured</li>
+              <li class="m-tab" data-tab="ratings">Customer Ratings</li>
+              <li class="m-tab" data-tab="gst">GST Invoice Available</li>
+              <li class="m-tab" data-tab="ram">RAM</li>
+              <li class="m-tab" data-tab="storage">Internal Storage</li>
+              <li class="m-tab" data-tab="battery">Battery Capacity</li>
+              <li class="m-tab" data-tab="screen">Screen Size</li>
+            </ul>
+          </div>
+      
+          <div class="m-filter-options">
+            <div class="m-filter-content active" id="price">
+              <label><input type="checkbox" /> Rs. 10000 and Below</label>
+              <label><input type="checkbox" /> Rs. 10000 - Rs. 15000</label>
+              <label><input type="checkbox" /> Rs. 15000 - Rs. 20000</label>
+              <label><input type="checkbox" /> Rs. 20000 - Rs. 30000</label>
+              <label><input type="checkbox" /> Rs. 30000 and Above</label>
+            </div>
+      
+            <div class="m-filter-content" id="brand">
+              <label><input type="checkbox" /> Samsung</label>
+              <label><input type="checkbox" /> Xiaomi</label>
+              <label><input type="checkbox" /> Realme</label>
+              <label><input type="checkbox" /> Apple</label>
+            </div>
+      
+            <div class="m-filter-content" id="fassured">
+              <label><input type="checkbox" /> Show only F-Assured</label>
+            </div>
+      
+            <div class="m-filter-content" id="ratings">
+              <label><input type="checkbox" /> 4★ & above</label>
+              <label><input type="checkbox" /> 3★ & above</label>
+            </div>
+      
+            <div class="m-filter-content" id="gst">
+              <label><input type="checkbox" /> Eligible for GST Invoice</label>
+            </div>
+      
+            <div class="m-filter-content" id="ram">
+              <label><input type="checkbox" /> 4 GB</label>
+              <label><input type="checkbox" /> 6 GB</label>
+              <label><input type="checkbox" /> 8 GB</label>
+            </div>
+      
+            <div class="m-filter-content" id="storage">
+              <label><input type="checkbox" /> 64 GB</label>
+              <label><input type="checkbox" /> 128 GB</label>
+            </div>
+      
+            <div class="m-filter-content" id="battery">
+              <label><input type="checkbox" /> 4000 mAh & Above</label>
+              <label><input type="checkbox" /> 5000 mAh & Above</label>
+            </div>
+      
+            <div class="m-filter-content" id="screen">
+              <label><input type="checkbox" /> 6.0'' and Above</label>
+              <label><input type="checkbox" /> 6.5'' and Above</label>
+            </div>
+          </div>
+        </div>
+      
+        <div class="m-filter-footer">
+          <span id="m-product-count">517 products found</span>
+          <button class="m-apply-btn">Apply</button>
+        </div>
+      
+        <div class="m-bottom-nav">
+          <div class="m-nav-item active">
+            <img src="" alt="Home Icon" class="m-icon">
+            <p>Home</p>
+          </div>
+          <div class="m-nav-item">
+            <img src="" alt="Categories Icon" class="m-icon">
+            <p>Categories</p>
+          </div>
+        </div>
+      </div>
       <div class="extra-filter-mob">
         <div class="div-5g">
           <img src="images/icons/mobile/5g.svg" alt="" class="5g-img" />
@@ -426,8 +516,90 @@
         <img src="images/icons/mobile/mobile-add.png" class="mob-add" alt="">
         <div class="" id="grid-sec"></div>
         <div id="mobile-sec"></div> 
+        <div id="pagination" class="pagination-container"></div>
       </div>
     </section>
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-section">
+          <h4>ABOUT</h4>
+          <a href="#">Contact Us</a>
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Flipkart Stories</a>
+          <a href="#">Press</a>
+          <a href="#">Corporate Information</a>
+        </div>
+        <div class="footer-section">
+          <h4>GROUP COMPANIES</h4>
+          <a href="#">Myntra</a>
+          <a href="#">Cleartrip</a>
+          <a href="#">Shopsy</a>
+        </div>
+        <div class="footer-section">
+          <h4>HELP</h4>
+          <a href="#">Payments</a>
+          <a href="#">Shipping</a>
+          <a href="#">Cancellation & Returns</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="footer-section">
+          <h4>CONSUMER POLICY</h4>
+          <a href="#">Cancellation & Returns</a>
+          <a href="#">Terms Of Use</a>
+          <a href="#">Security</a>
+          <a href="#">Privacy</a>
+          <a href="#">Sitemap</a>
+          <a href="#">Grievance Redressal</a>
+          <a href="#">EPR Compliance</a>
+        </div>
+        <div class="footer-section address">
+          <h4>Mail Us:</h4>
+          <p>Flipkart Internet Private Limited,<br>
+            Buildings Alyssa, Begonia & Clove Embassy Tech Village,<br>
+            Outer Ring Road, Devarabeesanahalli Village,<br>
+            Bengaluru, 560103, Karnataka, India
+          </p>
+          <h4>Social</h4>
+          <div class="social-icons">
+            <img src="" alt="Facebook" class="icon">
+            <img src="" alt="Twitter" class="icon">
+            <img src="" alt="YouTube" class="icon">
+            <img src="" alt="Instagram" class="icon">
+          </div>
+        </div>
+        <div class="footer-section address">
+          <h4>Registered Office Address:</h4>
+          <p>Flipkart Internet Private Limited,<br>
+            Buildings Alyssa, Begonia & Clove Embassy Tech Village,<br>
+            Outer Ring Road, Devarabeesanahalli Village,<br>
+            Bengaluru, 560103, Karnataka, India<br>
+            CIN: U51109KA2012PTC066107<br>
+            Telephone: <a href="#">044-45614700</a> / <a href="#">044-67415800</a>
+          </p>
+        </div>
+      </div>
+  
+      <div class="footer-bottom">
+        <div class="bottom-links">
+          <span><img src="" alt="Seller Icon" class="icon-small"> Become a Seller</span>
+          <span><img src="" alt="Advertise Icon" class="icon-small"> Advertise</span>
+          <span><img src="" alt="Gift Icon" class="icon-small"> Gift Cards</span>
+          <span><img src="" alt="Help Icon" class="icon-small"> Help Center</span>
+        </div>
+        <div class="bottom-right">
+          <span>© 2007-2025 Flipkart.com</span>
+          <div class="payment-icons">
+            <img src="" alt="Visa" class="icon-small">
+            <img src="" alt="MasterCard" class="icon-small">
+            <img src="" alt="Rupay" class="icon-small">
+            <img src="" alt="Net Banking" class="icon-small">
+            <img src="" alt="Cash on Delivery" class="icon-small">
+            <img src="" alt="EMI" class="icon-small">
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script type="module" src="./scripts/main.js"></script>
   </body>

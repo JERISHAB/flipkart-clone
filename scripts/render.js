@@ -177,3 +177,37 @@ export function renderFilterTag(filterMap) {
 
   filterContainer.innerHTML = html;
 }
+
+
+
+
+export function renderPaginationControls(
+  totalPages,
+  currentPage,
+  onPageChange
+) {
+  const paginationContainer = document.getElementById("pagination");
+  paginationContainer.innerHTML = "";
+
+  const pageInfo = document.createElement("span");
+  pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+  paginationContainer.appendChild(pageInfo);
+
+  for (let i = 1; i <= totalPages; i++) {
+    const btn = document.createElement("button");
+    btn.textContent = i;
+    btn.classList.add("page-button");
+    if (i === currentPage) btn.classList.add("active");
+
+    btn.addEventListener("click", () => onPageChange(i));
+    paginationContainer.appendChild(btn);
+  }
+
+  if (currentPage < totalPages) {
+    const nextBtn = document.createElement("button");
+    nextBtn.textContent = "NEXT";
+    nextBtn.classList.add("page-button");
+    nextBtn.addEventListener("click", () => onPageChange(currentPage + 1));
+    paginationContainer.appendChild(nextBtn);
+  }
+}
