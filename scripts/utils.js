@@ -138,23 +138,4 @@ export function setPrice(originalArray) {
  return originalArray
 }
 
-export function sortProducts(products, sortType) {
-  let sorted = [...products];
-  switch (sortType) {
-    case "popularity":
-      sorted.sort((a, b) => b.rating_count - a.rating_count);
-      break;
-    case "newest":
-      sorted.sort((a, b) => new Date(b.date_added) - new Date(a.date_added));
-      break;
-    case "lowToHigh":
-      sorted.sort((a, b) => a.price - b.price);
-      break;
-    case "highToLow":
-      sorted.sort((a, b) => b.price - a.price);
-      break;
-    default:
-      return sorted;
-  }
-  return sorted;
-}
+
