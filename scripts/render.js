@@ -37,15 +37,15 @@ export function renderProductsDesktop(dataArray) {
               <div class="product-details">
                   <h3 class="product-title">${title}</h3>
                   <div class="product-rating">
-                      <span class="rating-box">${rating} ★</span>
+                      <span class="rating-box">${rating} <img src="images/icons/ratings-star.svg" class="rating-star-lap" alt=""></span>
                       <span class="rating-text">${rating_count} Ratings & ${review_count} Reviews</span>
                   </div>
                   <ul class="product-features">
-                      <li>${ram} MB RAM | ${rom} MB ROM</li>
-                      <li>${display_size_cm} cm (${display_size_inches} inch) Display</li>
-                      <li>${camera_rear} Rear Camera</li>
-                      <li>${battery_capacity_mah} mAh Battery</li>
-                      <li>${warranty_device_years} Year warranty for device and ${warranty_accessories_months} for box accessories</li>
+                      <li><span class="device-prop"></span>${ram} MB RAM | ${rom} MB ROM</li>
+                      <li><span class="device-prop"></span>${display_size_cm} cm (${display_size_inches} inch) Display</li>
+                      <li><span class="device-prop"></span>${camera_rear} Rear Camera</li>
+                      <li><span class="device-prop"></span>${battery_capacity_mah} mAh Battery</li>
+                      <li><span class="device-prop"></span>${warranty_device_years} Year warranty for device and ${warranty_accessories_months} for box accessories</li>
                   </ul>
               </div>
               
@@ -58,12 +58,16 @@ export function renderProductsDesktop(dataArray) {
                       <span class="strike">₹${original_price}</span>
                       <span class="discount-price">${discount_percent}% off</span>
                   </div>
-                  <p class="stock-warning">Only ${stock_units_left} left</p>
+                  <p class="warranty-warning">1 year warranty by ${brand}</p>
                   <p class="exchange-text">Upto <span class="exchange-amount">₹${exchange_offer}</span> Off on Exchange</p>
                   <p class="bank-offer">${offers}</p>
               </div>
 
           </div>
+            <label class="compare-box">
+              <input type="checkbox">
+              <span class="compare-text">Add to Compare</span>
+            </label>
     </div>`;
   });
   document.getElementById("grid-sec").innerHTML = html;
