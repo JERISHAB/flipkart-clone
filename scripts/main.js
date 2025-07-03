@@ -102,29 +102,7 @@ const fetchData = async () => {
 };
 
 
-function renderAndSort(array) {
-  const sorted = currentSortType ? sortProducts(array, currentSortType) : array;
-  renderProductsDesktop(sorted);
-  renderProductsMobile(sorted);
-}
 
-function updateFilteredAndRender(filteredArray) {
-  currentFilteredArray = filteredArray;
-  renderAndSort(currentFilteredArray);
-}
- 
-function setupSortEvents() {
-  const sortOptions = document.querySelectorAll(".sort-option");
-  sortOptions.forEach((option) => {
-    option.addEventListener("click", () => {
-      sortOptions.forEach((o) => o.classList.remove("active"));
-      option.classList.add("active");
-
-      currentSortType = option.getAttribute("data-sort");
-      renderAndSort(currentFilteredArray);
-    });
-  });
-}
 
 fetchData();
 
