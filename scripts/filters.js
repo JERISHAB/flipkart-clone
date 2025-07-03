@@ -71,3 +71,4 @@ export function filterSelect(minSelect, maxSelect, min, max) {
 
   }
 }
+

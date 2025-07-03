@@ -1,7 +1,7 @@
 import { renderFilterTag, renderProductsDesktop, renderProductsMobile } from "./render.js";
 import { discountFilter, ramFilter, ratingFilter,sliderFilter} from "./filters.js";
 
-export function applyFilters(originalArray) {
+export function applyFilters(originalArray, updateFilteredAndRender) {
   const checked = document.querySelectorAll("input[type=checkbox]:checked");
 
   const minRange = document.getElementById("min-range");
@@ -13,7 +13,7 @@ export function applyFilters(originalArray) {
   if (!filterMap["slider"]) {
     filterMap["slider"] = [];
   }
-  filterMap["slider"].push(minRange.value,maxRange.value);
+  filterMap["slider"].push(minRange.value, maxRange.value);
 
   checked.forEach((cb) => {
     const name = cb.getAttribute("filterName");
@@ -68,10 +68,10 @@ export function applyFilters(originalArray) {
           match = false;
           break;
         }
-      } else if (key==="slider") { 
-        const price = parseFloat(item.price)
+      } else if (key === "slider") {
+        const price = parseFloat(item.price);
         let sliderMatch = false;
-        sliderMatch = sliderFilter(sliderMatch, price, selectedValues)
+        sliderMatch = sliderFilter(sliderMatch, price, selectedValues);
         if (!sliderMatch) {
           match = false;
           break;
@@ -89,11 +89,13 @@ export function applyFilters(originalArray) {
     }
   }
 
-  renderFilterTag(filterMap)
+  renderFilterTag(filterMap);
 
-  renderProductsDesktop(filteredArray);
-  renderProductsMobile(filteredArray);
-  console.log("rendering in utils")
+  // renderProductsDesktop(filteredArray);
+  // renderProductsMobile(filteredArray);
+  // console.log("rendering in utils");
+
+  updateFilteredAndRender(filteredArray);
 }
 
 export function readMore() {
@@ -135,3 +137,5 @@ export function setPrice(originalArray) {
   });
  return originalArray
 }
+
+
