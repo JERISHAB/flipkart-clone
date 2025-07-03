@@ -8,8 +8,8 @@ export function applyFilters(originalArray) {
   const maxRange = document.getElementById("max-range");
 
   let filterMap = {};
-
-  // for slider
+ 
+  // for slider 
   if (!filterMap["slider"]) {
     filterMap["slider"] = [];
   }
