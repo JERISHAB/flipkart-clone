@@ -133,7 +133,7 @@
             alt="flipkart-logo"
             class="logo-mob-nav"
             />
-            <span class="mob-nav-1-head">Poco Mobiles</span>
+            <span class="mob-nav-1-head">Mobiles</span>
         </div>
         
 
@@ -148,12 +148,12 @@
             alt="mob-nav-cart"
             class="mob-nav-cart"
             >
-            <span class="mob-nav-1-login">Login</span>
+            <!-- <span class="mob-nav-1-login">Login</span> -->
         </div>
       </nav>
       <nav class="mob-nav-2">
         <div class="mn-left">
-          <img
+          <img         
             src="images/icons/mobile/mob-sort-icon.svg"
             alt=""
             class="mn-left-img"
@@ -176,70 +176,85 @@
           <h2>Filters</h2>
           <button id="m-clear-btn">Clear Filters</button>
         </div>
-      
+
+      <!-- MObile filter -->
         <div class="m-filter-body">
           <div class="m-filter-tabs">
             <ul>
               <li class="m-tab active" data-tab="price">Price</li>
-              <li class="m-tab" data-tab="brand">Brand <span class="m-count">2</span></li>
-              <li class="m-tab" data-tab="fassured">F-Assured</li>
-              <li class="m-tab" data-tab="ratings">Customer Ratings</li>
-              <li class="m-tab" data-tab="gst">GST Invoice Available</li>
+              <li class="m-tab" data-tab="brand">Brand</li>
               <li class="m-tab" data-tab="ram">RAM</li>
-              <li class="m-tab" data-tab="storage">Internal Storage</li>
-              <li class="m-tab" data-tab="battery">Battery Capacity</li>
-              <li class="m-tab" data-tab="screen">Screen Size</li>
+              <li class="m-tab" data-tab="rom">Internal Storage</li>
+              <li class="m-tab" data-tab="battery">Battery</li>
+              <li class="m-tab" data-tab="ratings">Customer Ratings</li>
+              <li class="m-tab" data-tab="fassured">Flipkart Assured</li>
             </ul>
           </div>
       
           <div class="m-filter-options">
-            <div class="m-filter-content active" id="price">
-              <label><input type="checkbox" /> Rs. 10000 and Below</label>
-              <label><input type="checkbox" /> Rs. 10000 - Rs. 15000</label>
-              <label><input type="checkbox" /> Rs. 15000 - Rs. 20000</label>
-              <label><input type="checkbox" /> Rs. 20000 - Rs. 30000</label>
-              <label><input type="checkbox" /> Rs. 30000 and Above</label>
+            
+            <div class="m-filter-content active" id="mobile-price-filter">
+              <label>
+                <input type="checkbox" value="below10000" filterName="mobile_price" />
+                Rs. 10000 and Below
+              </label>
+
+              <label>
+                <input type="checkbox" value="10000-15000" filterName="mobile_price" />
+                Rs. 10000 - Rs. 15000
+              </label>
+
+              <label>
+                <input type="checkbox" value="15000-20000" filterName="mobile_price" />
+                Rs. 15000 - Rs. 20000
+              </label>
+
+              <label>
+                <input type="checkbox" value="20000-30000" filterName="mobile_price" />
+                Rs. 20000 - Rs. 30000
+              </label>
+
+              <label>
+                <input type="checkbox" value="above30000" filterName="mobile_price" />
+                Rs. 30000 and Above
+              </label>
             </div>
+
       
             <div class="m-filter-content" id="brand">
-              <label><input type="checkbox" /> Samsung</label>
-              <label><input type="checkbox" /> Xiaomi</label>
-              <label><input type="checkbox" /> Realme</label>
-              <label><input type="checkbox" /> Apple</label>
-            </div>
-      
-            <div class="m-filter-content" id="fassured">
-              <label><input type="checkbox" /> Show only F-Assured</label>
-            </div>
-      
-            <div class="m-filter-content" id="ratings">
-              <label><input type="checkbox" /> 4★ & above</label>
-              <label><input type="checkbox" /> 3★ & above</label>
-            </div>
-      
-            <div class="m-filter-content" id="gst">
-              <label><input type="checkbox" /> Eligible for GST Invoice</label>
+              <label><input type="checkbox" filterName="brand" value="Redmi" /> Redmi</label>
+              <label><input type="checkbox" filterName="brand" value="Samsung" /> Samsung</label>
+              <label><input type="checkbox" filterName="brand" value="realme" /> Realme</label>
+              <label><input type="checkbox" filterName="brand" value="Apple" /> Apple</label>
             </div>
       
             <div class="m-filter-content" id="ram">
-              <label><input type="checkbox" /> 4 GB</label>
-              <label><input type="checkbox" /> 6 GB</label>
-              <label><input type="checkbox" /> 8 GB</label>
+              <label><input type="checkbox" filterName="ram" value="1" /> 1 GB</label>
+              <label><input type="checkbox" filterName="ram" value="4" /> 4 GB</label>
+              <label><input type="checkbox" filterName="ram" value="6" /> 6 GB</label>
+              <label><input type="checkbox" filterName="ram" value="8" /> 8 GB</label>
             </div>
       
-            <div class="m-filter-content" id="storage">
-              <label><input type="checkbox" /> 64 GB</label>
-              <label><input type="checkbox" /> 128 GB</label>
+            <div class="m-filter-content" id="rom">
+              <label><input type="checkbox" filterName="rom" value="32" /> 32 GB</label>
+              <label><input type="checkbox" filterName="rom" value="64" /> 64 GB</label>
+              <label><input type="checkbox" filterName="rom" value="128" /> 128 GB</label>
+              <label><input type="checkbox" filterName="rom" value="256" /> 256 GB</label>
             </div>
       
             <div class="m-filter-content" id="battery">
-              <label><input type="checkbox" /> 4000 mAh & Above</label>
-              <label><input type="checkbox" /> 5000 mAh & Above</label>
+              <label><input type="checkbox" filterName="battery_capacity_mah" value="4000" /> 4000 mAh & Above</label>
+              <label><input type="checkbox" filterName="battery_capacity_mah" value="5000" /> 5000 mAh & Above</label>
             </div>
       
-            <div class="m-filter-content" id="screen">
-              <label><input type="checkbox" /> 6.0'' and Above</label>
-              <label><input type="checkbox" /> 6.5'' and Above</label>
+
+            <div class="m-filter-content" id="ratings">
+              <label><input type="checkbox" filterName="rating" value="4" /> 4★ & above</label>
+              <label><input type="checkbox" filterName="rating" value="3" /> 3★ & above</label>
+            </div>
+      
+            <div class="m-filter-content" id="fassured">
+              <label><input type="checkbox" filterName="flipkart_assured" value="true" /> Show only Flipkart Assured</label>
             </div>
           </div>
         </div>
@@ -248,24 +263,14 @@
           <span id="m-product-count">517 products found</span>
           <button class="m-apply-btn">Apply</button>
         </div>
-      
-        <div class="m-bottom-nav">
-          <div class="m-nav-item active">
-            <img src="" alt="Home Icon" class="m-icon">
-            <p>Home</p>
-          </div>
-          <div class="m-nav-item">
-            <img src="" alt="Categories Icon" class="m-icon">
-            <p>Categories</p>
-          </div>
-        </div>
       </div>
+      
       <div class="extra-filter-mob">
         <div class="div-5g">
           <img src="images/icons/mobile/5g.svg" alt="" class="5g-img" />
         <span class="text-5g"> 5G</span> 
         </div>
-        <div class="price-range">
+        <!-- <div class="price-range">
           <img
             src="images/icons/mobile/price-range.svg"
             alt=""
@@ -278,11 +283,11 @@
             src="images/icons/mobile/new-launches.svg"
             alt=""
             class="new-launch-img"
-          />
+          />  
           <span class="new-launch-text">New Launches</span>
-        </div>
+        </div> -->
       </div>
-      <p class="browse-para" id="browse-para" >
+      <!-- <p class="browse-para" id="browse-para" >
         Are you browsing online for an ideal cellphone model that can cater to
         your varied needs? If yes, then check out the different types of POCO
         mobile phones that are available online. Explore a range of screen sizes
@@ -299,21 +304,21 @@
         smartphones online and explore the vast array of options available to
         find the ideal fit for your needs and style. Shop now and elevate your
         tech experience with a POCO mobile.</span>
-      </p>
+      </p> -->
       <p class="mobile-list" id="mobile-list">          
         <a href="">POCO C31</a>
         | <a href="">POCO C31</a> 
         | <a href="">POCO M4 Pro 5G</a> 
         | <a href="">POCO M4 Pro AMOLED</a>
-        | <a href="">POCO X4 Pro</a>
-      </p>
-      <p id="readBtn"  >Read more</p>
+        | <a href="">POCO X4 Pro</a>   
+      </p>      
+      <p id="readBtn"  >Read More</p>
 
     </header>
     <!-- END HEADER FOR 375px -->
 
     <section class="main-container">
-      <div class="left-container">
+      <div class="left-container">    
         <div class="filters">
           <div class="filters-top">
             <span class="filter-head">Filters</span>
@@ -322,7 +327,7 @@
           <div class="active-filters" id="active-filters">
             <!-- <span class="filter-tag"
               >Min–₹10000 <span class="remove-tag">✕</span></span
-            > -->
+            > -->       
           </div>
         </div>
 
@@ -495,10 +500,10 @@
               href=""
               >GIONEE Mobiles</a
             >
-          </p>
-          <p class="paging-details">
-            <span class="paging-head">Mobiles</span
-            ><span class="paging-text"
+          </p> 
+          <p class="paging-details">  
+            <span class="paging-head">Mobiles</span 
+            ><span class="paging-text"   
               >(Showing 1 – 24 products of 116 products)</span
             >
           </p>
@@ -509,16 +514,20 @@
             <span class="sort-option" data-sort="highToLow">Price -- High to Low</span>
             <span class="sort-option" data-sort="newest">Newest First</span>
           </p>
-          
-          
-          
         </div>
         <img src="images/icons/mobile/mobile-add.png" class="mob-add" alt="">
         <div class="" id="grid-sec"></div>
         <div id="mobile-sec"></div> 
         <div id="pagination" class="pagination-container"></div>
+        <div class="did-you-find">
+          <span>Did you find what you were looking for?</span>
+          <button class="yes" >Yes</button>
+          <button class="no" >No</button>
+        </div>
       </div>
     </section>
+
+
     <footer class="footer">
       <div class="footer-top">
         <div class="footer-section">
@@ -553,28 +562,32 @@
           <a href="#">Grievance Redressal</a>
           <a href="#">EPR Compliance</a>
         </div>
-        <div class="footer-section address">
+        <div class="footer-section2 address">
           <h4>Mail Us:</h4>
-          <p>Flipkart Internet Private Limited,<br>
-            Buildings Alyssa, Begonia & Clove Embassy Tech Village,<br>
-            Outer Ring Road, Devarabeesanahalli Village,<br>
-            Bengaluru, 560103, Karnataka, India
+          <p>Flipkart Internet Private Limited,</p>
+          <p> Buildings Alyssa, Begonia & </p>
+          <p>Clove Embassy Tech Village,</p>
+          <p>Outer Ring Road, Devarabeesanahalli Village,</p>
+          <p>Bengaluru, 560103,</p><p>Karnataka, India</p>         
           </p>
           <h4>Social</h4>
           <div class="social-icons">
-            <img src="" alt="Facebook" class="icon">
-            <img src="" alt="Twitter" class="icon">
-            <img src="" alt="YouTube" class="icon">
-            <img src="" alt="Instagram" class="icon">
+            <img src="images/icons/footer/fb.svg" alt="Facebook" class="icon">
+            <img src="images/icons/footer/x.svg" alt="Twitter" class="icon">
+            <img src="images/icons/footer/yt.svg" alt="YouTube" class="icon">
+            <img src="images/icons/footer/ig.svg" alt="Instagram" class="icon">
           </div>
         </div>
-        <div class="footer-section address">
+        <div class="footer-section2 address">
           <h4>Registered Office Address:</h4>
-          <p>Flipkart Internet Private Limited,<br>
-            Buildings Alyssa, Begonia & Clove Embassy Tech Village,<br>
-            Outer Ring Road, Devarabeesanahalli Village,<br>
-            Bengaluru, 560103, Karnataka, India<br>
-            CIN: U51109KA2012PTC066107<br>
+          <p>Flipkart Internet Private Limited,</p>
+          <p> Buildings Alyssa, Begonia &</p> 
+          <p>Clove Embassy Tech Village,</p>
+          <p> Outer Ring Road, Devarabeesanahalli Village,</p>
+          <p> Bengaluru, 560103, </p>
+          <p>Karnataka, India</p>
+          <p> CIN: U51109KA2012PTC066107</p>
+            <p class="telephone" >
             Telephone: <a href="#">044-45614700</a> / <a href="#">044-67415800</a>
           </p>
         </div>
@@ -582,20 +595,15 @@
   
       <div class="footer-bottom">
         <div class="bottom-links">
-          <span><img src="" alt="Seller Icon" class="icon-small"> Become a Seller</span>
-          <span><img src="" alt="Advertise Icon" class="icon-small"> Advertise</span>
-          <span><img src="" alt="Gift Icon" class="icon-small"> Gift Cards</span>
-          <span><img src="" alt="Help Icon" class="icon-small"> Help Center</span>
+          <span><img src="images/icons/footer/suite.svg" alt="Seller Icon" class="icon-small"> Become a Seller</span>
+          <span><img src="images/icons/footer/star.svg" alt="Advertise Icon" class="icon-small"> Advertise</span>
+          <span><img src="images/icons/footer/svgexport-20.svg" alt="Gift Icon" class="icon-small"> Gift Cards</span>
+          <span><img src="images/icons/footer/question-mark.svg" alt="Help Icon" class="icon-small"> Help Center</span>
         </div>
         <div class="bottom-right">
           <span>© 2007-2025 Flipkart.com</span>
           <div class="payment-icons">
-            <img src="" alt="Visa" class="icon-small">
-            <img src="" alt="MasterCard" class="icon-small">
-            <img src="" alt="Rupay" class="icon-small">
-            <img src="" alt="Net Banking" class="icon-small">
-            <img src="" alt="Cash on Delivery" class="icon-small">
-            <img src="" alt="EMI" class="icon-small">
+            <img src="images/icons/footer/visa.svg" alt="Visa" class="icon-small">
           </div>
         </div>
       </div>

@@ -170,3 +170,42 @@ backButton.addEventListener("click", () => {
   filterPanel.classList.remove("m-filter-visible");
   filterPanel.classList.add("m-filter-hidden");
 });
+
+
+
+
+
+// mobile filter
+document.querySelectorAll('.m-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.m-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    document.querySelectorAll('.m-filter-content').forEach(panel => {
+      panel.classList.remove('active');
+    });
+
+    const tabId = tab.getAttribute('data-tab');
+    const activePanel = document.getElementById(tabId);
+    if (activePanel) {
+      activePanel.classList.add('active');
+    }
+  });
+});
+
+
+
+document.getElementById("m-clear-btn").addEventListener("click", () => {
+  document
+    .querySelectorAll('#m-filter-wrapper input[type="checkbox"]')
+    .forEach((cb) => (cb.checked = false));
+
+  applyFilters(originalArray, updateFilteredAndRender);
+});
+
+
+
+document.querySelector(".m-apply-btn").addEventListener("click", () => {
+  filterPanel.classList.remove("m-filter-visible");
+  filterPanel.classList.add("m-filter-hidden");
+});

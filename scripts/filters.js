@@ -72,3 +72,23 @@ export function filterSelect(minSelect, maxSelect, min, max) {
   }
 }
 
+
+
+export function mobilePriceFilter(priceMatch, price, selectedValues) {
+  for (let val of selectedValues) {
+    if (val === "below10000" && price <= 10000) {
+      priceMatch = true;
+    } else if (val === "10000-15000" && price > 10000 && price <= 15000) {
+      priceMatch = true;
+    } else if (val === "15000-20000" && price > 15000 && price <= 20000) {
+      priceMatch = true;
+    } else if (val === "20000-30000" && price > 20000 && price <= 30000) {
+      priceMatch = true;
+    } else if (val === "above30000" && price > 30000) {
+      priceMatch = true;
+    }
+  }
+  return priceMatch;
+}
+
+

@@ -52,12 +52,13 @@ export function renderProductsDesktop(dataArray) {
               <div class="product-price-details">
               <div class="price-div">
                   <h2 class="price">₹${price}</h2>
-                  <img src="images/logos/assured.png" class="assured-img">
+                  <img src="images/logos/assured.png" class="assured-img-2">
               </div>    
                   <div class="original-price">
                       <span class="strike">₹${original_price}</span>
                       <span class="discount-price">${discount_percent}% off</span>
                   </div>
+                  <img src="images/logos/assured.png" class="assured-img-3">
                   <p class="warranty-warning">1 year warranty by ${brand}</p>
                   <p class="exchange-text">Upto <span class="exchange-amount">₹${exchange_offer}</span> Off on Exchange</p>
                   <p class="bank-offer">${offers}</p>
@@ -112,7 +113,7 @@ export function renderProductsMobile(dataArray) {
               <img src="images/logos/assured.png" class="massured">
             </div>
             <div class="mprice">
-              <span class="mdiscount">↓${discount_percent}%</span>
+              <span class="mdiscount"><img src="images/icons/mobile/discount-arrow.svg"  class="discount-arrow" >${discount_percent}%</span>
               <span class="mstrike">₹${original_price}</span>
               <span class="msell">₹${price}</span>
             </div>
@@ -120,14 +121,14 @@ export function renderProductsMobile(dataArray) {
               <img src="images/icons/mobile/wow-img.svg" alt="wow-img" class="wow-img">
              <span class="serif" >₹9,499</span> with ${offers}
             </div>
-            <div class="mexchange">
+            <div class="mexchange">   
               Upto <span class="serif" >₹${exchange_offer}</span> Off on Exchange
             </div>
             <div class="mwarranty">${warranty_device_years} year warranty by ${brand}</div>
           </div>
         </div>
         <div class="mfeatures">
-          <div class="mfeature">${ram} MB RAM | ${rom} MB ROM</div>
+          <div class="mfeature">${ram} GB RAM | ${rom} GB ROM</div>
           <div class="mfeature">${display_size_cm} cm (${display_size_inches} inch) Display</div>
           <div class="mfeature">${camera_rear} Rear Camera</div>
           <div class="mfeature">${battery_capacity_mah} mAh Battery</div>
