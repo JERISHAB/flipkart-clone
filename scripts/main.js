@@ -1,10 +1,12 @@
-import { renderProductsDesktop, renderProductsMobile } from "./render.js";
+import { renderProductsDesktop, renderProductsMobile,renderPaginationControls } from "./render.js";
 import { applyFilters, readMore, setPrice, sortProducts } from "./utils.js";
 import { updateTrack1, syncSlidersFromDropdowns1 } from "./changeCss.js";
 
 let originalArray = [];
 let currentFilteredArray = [];
 let currentSortType = null;
+let currentPage = 1;
+const PRODUCTS_PER_PAGE = 10;
 
 const fetchData = async () => {
   try {
@@ -48,7 +50,8 @@ const fetchData = async () => {
         track,
         originalArray,
         minSelect,
-        maxSelect
+        maxSelect,
+        updateFilteredAndRender
       )
     );
     maxRange.addEventListener("input", () =>
@@ -58,7 +61,8 @@ const fetchData = async () => {
         track,
         originalArray,
         minSelect,
-        maxSelect
+        maxSelect,
+        updateFilteredAndRender
       )
     );
     minSelect.addEventListener("change", () =>
@@ -68,7 +72,8 @@ const fetchData = async () => {
         minSelect,
         maxSelect,
         track,
-        originalArray
+        originalArray,
+        updateFilteredAndRender
       )
     );
     maxSelect.addEventListener("change", () =>
@@ -78,7 +83,8 @@ const fetchData = async () => {
         minSelect,
         maxSelect,
         track,
-        originalArray
+        originalArray,
+        updateFilteredAndRender
       )
     );
 
@@ -93,7 +99,8 @@ const fetchData = async () => {
         track,
         originalArray,
         minSelect,
-        maxSelect
+        maxSelect,
+        updateFilteredAndRender
       );
     });
   } catch (error) {
@@ -102,6 +109,44 @@ const fetchData = async () => {
 };
 
 
+function renderAndSort(array) {
+  const sortedArray = currentSortType
+    ? sortProducts(array, currentSortType)
+    : array;
+
+  const totalPages = Math.ceil(sortedArray.length / PRODUCTS_PER_PAGE);
+  const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
+  const endIndex = startIndex + PRODUCTS_PER_PAGE;
+  const paginatedProducts = sortedArray.slice(startIndex, endIndex);
+
+  renderProductsDesktop(paginatedProducts);
+  renderProductsMobile(paginatedProducts);
+
+  renderPaginationControls(totalPages, currentPage, (newPage) => {
+    currentPage = newPage;
+    renderAndSort(currentFilteredArray);
+  });
+}
+
+function updateFilteredAndRender(filteredArray) {
+  currentPage = 1;
+  currentFilteredArray = filteredArray;
+  renderAndSort(currentFilteredArray);
+}
+ 
+function setupSortEvents() {
+  const sortOptions = document.querySelectorAll(".sort-option");
+  sortOptions.forEach((option) => {
+    option.addEventListener("click", () => {
+      sortOptions.forEach((o) => o.classList.remove("active"));
+      option.classList.add("active");
+
+      currentSortType = option.getAttribute("data-sort");
+      currentPage = 1;
+      renderAndSort(currentFilteredArray);
+    });
+  });
+}
 
 
 fetchData();
@@ -110,3 +155,18 @@ fetchData();
 let btn = document.getElementById("readBtn");
 btn.onclick = () => readMore();
 
+
+
+const filterButton = document.querySelector(".mn-right");
+const filterPanel = document.getElementById("m-filter-wrapper");
+const backButton = document.querySelector(".m-back-btn");
+
+filterButton.addEventListener("click", () => {
+  filterPanel.classList.remove("m-filter-hidden");
+  filterPanel.classList.add("m-filter-visible");
+});
+
+backButton.addEventListener("click", () => {
+  filterPanel.classList.remove("m-filter-visible");
+  filterPanel.classList.add("m-filter-hidden");
+});

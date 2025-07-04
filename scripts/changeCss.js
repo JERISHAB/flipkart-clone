@@ -7,7 +7,8 @@ export function updateTrack1(
   track,
   originalArray,
   minSelect,
-  maxSelect
+  maxSelect,
+  updateFilteredAndRender
 ) {
   let min = parseInt(minRange.value);
   let max = parseInt(maxRange.value);
@@ -34,9 +35,7 @@ export function updateTrack1(
      #b1b1b1  ${percentMax}%,
      #b1b1b1 100%)`;
 
-  applyFilters(originalArray);
-
-
+     applyFilters(originalArray, updateFilteredAndRender);
 
   minSelect.value = min;
   maxSelect.value = max;
@@ -50,7 +49,8 @@ export function syncSlidersFromDropdowns1(
   minSelect,
   maxSelect,
   track,
-  originalArray
+  originalArray,
+  updateFilteredAndRender
 ) {
   let min = parseInt(minSelect.value);
   let max = parseInt(maxSelect.value);
@@ -60,12 +60,15 @@ export function syncSlidersFromDropdowns1(
   }
   minRange.value = min;
   maxRange.value = max;
-  updateTrack1(minRange,
-  maxRange,
-  track,
-  originalArray,
-  minSelect,
-  maxSelect);
+  updateTrack1(
+    minRange,
+    maxRange,
+    track,
+    originalArray,
+    minSelect,
+    maxSelect,
+    updateFilteredAndRender
+  );
 }
 
 
