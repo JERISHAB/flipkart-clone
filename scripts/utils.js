@@ -1,5 +1,15 @@
-import { renderFilterTag, renderProductsDesktop, renderProductsMobile } from "./render.js";
-import { discountFilter, ramFilter, ratingFilter,sliderFilter} from "./filters.js";
+import {
+  renderFilterTag,
+  renderProductsDesktop,
+  renderProductsMobile,
+} from "./render.js";
+import {
+  discountFilter,
+  mobilePriceFilter,
+  ramFilter,
+  ratingFilter,
+  sliderFilter,
+} from "./filters.js";
 
 export function applyFilters(originalArray, updateFilteredAndRender) {
   const checked = document.querySelectorAll("input[type=checkbox]:checked");
@@ -8,8 +18,8 @@ export function applyFilters(originalArray, updateFilteredAndRender) {
   const maxRange = document.getElementById("max-range");
 
   let filterMap = {};
- 
-  // for slider 
+
+  // for slider
   if (!filterMap["slider"]) {
     filterMap["slider"] = [];
   }
@@ -76,6 +86,15 @@ export function applyFilters(originalArray, updateFilteredAndRender) {
           match = false;
           break;
         }
+      } else if (key === "mobile_price") {
+        const price = parseFloat(item.price);
+        let priceMatch = false;
+
+        priceMatch = mobilePriceFilter(priceMatch, price, selectedValues);
+        if (!priceMatch) {
+          match = false;
+          break;
+        }
       } else {
         if (!selectedValues.includes(item[key])) {
           match = false;
@@ -100,13 +119,13 @@ export function applyFilters(originalArray, updateFilteredAndRender) {
 
 export function readMore() {
   let btn = document.getElementById("readBtn");
-  let para = document.getElementById("browse-para");
+  // let para = document.getElementById("browse-para");
   let mobList = document.getElementById("mobile-list");
-  if (para.style.overflow != "visible") {
-    para.style.overflow = "visible";
-    para.style.lineHeight = "16px";
-    para.style.maxHeight = "fit-content";
-    para.style.webkitLineClamp = "0";
+  if (mobList.style.overflow != "visible") {
+    // para.style.overflow = "visible";
+    // para.style.lineHeight = "16px";
+    // para.style.maxHeight = "fit-content";
+    // para.style.webkitLineClamp = "0";
 
     mobList.style.overflow = "visible";
     mobList.style.lineHeight = "16px";
@@ -115,10 +134,10 @@ export function readMore() {
 
     btn.innerHTML = "Read less";
   } else {
-    para.style.overflow = "hidden";
-    para.style.lineHeight = "10px";
-    para.style.maxHeight = "10px";
-    para.style.webkitLineClamp = "1";
+    // para.style.overflow = "hidden";
+    // para.style.lineHeight = "10px";
+    // para.style.maxHeight = "10px";
+    // para.style.webkitLineClamp = "1";
 
     mobList.style.overflow = "hidden";
     mobList.style.lineHeight = "16px";
@@ -129,13 +148,13 @@ export function readMore() {
   }
 }
 
-
-
 export function setPrice(originalArray) {
-  originalArray.forEach(product => {
-    product["price"] = Math.floor(product.original_price * ((100 - product.discount_percent) / 100));
+  originalArray.forEach((product) => {
+    product["price"] = Math.floor(
+      product.original_price * ((100 - product.discount_percent) / 100)
+    );
   });
- return originalArray
+  return originalArray;
 }
 
 export function sortProducts(products, sortType) {
