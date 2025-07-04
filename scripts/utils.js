@@ -8,8 +8,8 @@ export function applyFilters(originalArray, updateFilteredAndRender) {
   const maxRange = document.getElementById("max-range");
 
   let filterMap = {};
-
-  // for slider
+ 
+  // for slider 
   if (!filterMap["slider"]) {
     filterMap["slider"] = [];
   }
@@ -158,5 +158,3 @@ export function sortProducts(products, sortType) {
   }
   return sorted;
 }
-
-//s

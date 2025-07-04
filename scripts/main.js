@@ -148,6 +148,7 @@ function setupSortEvents() {
   });
 }
 
+
 fetchData();
 
 // Read more function
