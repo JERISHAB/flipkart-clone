@@ -25,7 +25,7 @@ export function renderProductsDesktop(dataArray) {
       offers,
       categories,
       image,
-    } = product;
+    } = product; 
 
     html += `
       <div class="product-card">
@@ -38,7 +38,9 @@ export function renderProductsDesktop(dataArray) {
                   <h3 class="product-title">${title}</h3>
                   <div class="product-rating">
                       <span class="rating-box">${rating} <img src="images/icons/ratings-star.svg" class="rating-star-lap" alt=""></span>
-                      <span class="rating-text">${rating_count} Ratings & ${review_count} Reviews</span>
+                      <span class="rating-text">${rating_count.toLocaleString("en-US")} Ratings & 
+                        ${review_count.toLocaleString("en-US")} Reviews
+                      </span>
                   </div>
                   <ul class="product-features">
                       <li><span class="device-prop"></span>${ram} MB RAM | ${rom} MB ROM</li>
@@ -51,24 +53,26 @@ export function renderProductsDesktop(dataArray) {
               
               <div class="product-price-details">
               <div class="price-div">
-                  <h2 class="price">₹${price}</h2>
-                  <img src="images/logos/assured.png" class="assured-img-2">
+                  <h2 class="price">₹${price.toLocaleString("en-US")}</h2>
+                  <img src="images/logos/assured.png" class="assured-img-2"> 
               </div>    
                   <div class="original-price">
-                      <span class="strike">₹${original_price}</span>
+                      <span class="strike">₹${original_price.toLocaleString(
+                        "en-US"
+                      )}</span>
                       <span class="discount-price">${discount_percent}% off</span>
                   </div>
                   <img src="images/logos/assured.png" class="assured-img-3">
                   <p class="warranty-warning">1 year warranty by ${brand}</p>
                   <p class="exchange-text">Upto <span class="exchange-amount">₹${exchange_offer}</span> Off on Exchange</p>
-                  <p class="bank-offer">${offers}</p>
+                  <p class="bank-offer">${offers}</p>  
               </div>
-
+    
           </div>
-            <label class="compare-box">
-              <input type="checkbox">
-              <span class="compare-text">Add to Compare</span>
-            </label>
+            <label class="compare-box"> 
+              <input type="checkbox">  
+              <span class="compare-text">Add to Compare</span> 
+            </label> 
     </div>`;
   });
   document.getElementById("grid-sec").innerHTML = html;
@@ -97,7 +101,7 @@ export function renderProductsMobile(dataArray) {
       ram,
       rom,  
       camera_rear, 
-      image,      
+      image,       
     } = product;
   
     html += ` 

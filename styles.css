@@ -101,44 +101,37 @@
 
  .logo-div {
    margin-left: 11.05rem;  
-   padding-top: 4px;
+   padding-top: 2px;
    display: flex;   
    flex-direction: column;
    gap: 0;   
  }
 
  .flipkart-logo {
-   height: 20.11px;
+   height: 20.11px; 
    width: 75px;
-   display: block;
-   /* background-size: 75px;
-background-repeat: no-repeat; */
  }
 
  .sub-logo-div {
    position: relative;
-   top: -3.25px;
-   font-size-adjust: 0.54;
+   top: -3px;
  }
 
  .sub-logo {
-   font-size: 11px;
+   font-size: 11px;   
    font-style: italic;
-   letter-spacing: -.3px;
+   letter-spacing: -.1px;
 
-   line-height: 15px;
  }
 
  .sub-logo-1 {
    color: rgba(240, 240, 240, 0.827);
-   /* -webkit-text-stroke: rgba(240, 240, 240, 0.877) .1px ; */
    font-weight: 500;
  }
 
  .sub-logo-2 {
-   color: #ffe600e7;
+   color: #ffe600f0;
    font-weight: 600;
-   line-height: 15px;
    margin-left: .5px;
  }
 
@@ -259,27 +252,41 @@ background-repeat: no-repeat; */
    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.16);
    align-items: center;
    height: 40px;
+  letter-spacing: -.01px;   
+ }  
 
+ .nav-2-downarrow {
+  height: 6px;
+  margin-bottom: -2px;
+  margin-left: 6px;
  }
+
+ .nav-2-div:nth-child(1) .nav-2-downarrow {
+   margin-left: 6.25px;
+ }   
 
  .nav-2-div:nth-child(2) {
-   margin: auto 49px;
- }
+   margin: 0 49px 0 48.75px;
+   letter-spacing: .01px;
+ }  
 
- .nav-2-div:nth-child(4) {
-   margin: auto 49px;
+ .nav-2-div:nth-child(4) { 
+   margin: 0 49px 0 49.5px; 
+ } 
+  
+ .nav-2-div:nth-child(6) {   
+   margin: 0 48.5px 0 49.5px; 
  }
-
- .nav-2-div:nth-child(6) {
-   margin: auto 49px;
+ .nav-2-div:nth-child(6) .nav-2-downarrow {    
+  margin-left: 7px;
  }
 
  .nav-2-div:nth-child(8) {
-   margin: auto 49px;
+   margin: 0 49px 0 49.5px;
  }
 
  .nav-2-div:nth-child(9) {
-   margin: auto 2px;
+   margin: 0 2px 0 2px;
  }
 
  .nav-2-div {
@@ -292,10 +299,7 @@ background-repeat: no-repeat; */
    font-weight: 600;
  }
 
- .nav-2-downarrow {
-   margin-left: 7px;
-   margin-bottom: -2px;
- }
+
 
 
  /* END NAV 2 STYLES */
@@ -1154,7 +1158,6 @@ background-repeat: no-repeat; */
 
  .did-you-find span {
    font-size: 16px;
-   ;
    font-weight: 500;
    margin-right: 24px;
  }
@@ -1179,15 +1182,16 @@ background-repeat: no-repeat; */
  .footer {
    background-color: #172337;
    color: white;
-   padding: 20px 40px;
+   padding: 20px 0px;
    font-size: 12px;
+   margin-top: 30px;
  }
 
- .footer a {
+ .footer a { 
    color: white;
-   text-decoration: none;
-   display: block;
-   margin: 10px 0;
+   text-decoration: none; 
+   display: block;  
+   margin: 10px 0; 
  }
 
  .footer-section2 a {
@@ -1198,15 +1202,15 @@ background-repeat: no-repeat; */
  }
 
  .footer h4 {
-   margin-bottom: 8px;
+   margin-bottom: 15px;
    color: #878787;
    font-weight: 400;
  }
 
  .footer-section {
    flex: 1;
-   min-width: 150px;
-   max-width: 183px;
+   /* min-width: 150px; */
+   max-width: 166px;
    margin: 10px;
  }
 
@@ -1220,12 +1224,18 @@ background-repeat: no-repeat; */
    display: flex;
    flex-wrap: wrap;
    border-bottom: 1px solid #454d5e;
-   padding-bottom: 30px;
+   padding:0 55px 30px 55px;
  }
 
  .footer-section2.address p {
    color: white;
    margin: 5px 0;
+ }
+
+ .separator{
+  border-left: rgb(96, 96, 96) solid 1px;
+  padding-left: 25px;
+  margin-left: 12px;
  }
 
  .social-icons {
@@ -1239,12 +1249,19 @@ background-repeat: no-repeat; */
    height: 24px;
  }
 
+ /* .footer-separator{
+  height: 200px;
+  width: 1px;
+  background-color: white;
+  margin: ;
+ } */
+
  .footer-bottom {
    display: flex;
    justify-content: space-evenly;
    flex-wrap: wrap;
    margin-top: 20px;
-   padding-top: 20px;
+   padding-top: 20px 40px 0 40px;
  }
 
  .bottom-links {
