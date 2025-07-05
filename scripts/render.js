@@ -89,40 +89,44 @@ export function renderProductsMobile(dataArray) {
       flipkart_assured,
       offers,
       exchange_offer,
-      battery_capacity_mah,
+      battery_capacity_mah, 
       warranty_device_years,
-      warranty_accessories_months,
+      warranty_accessories_months, 
       display_size_cm,
-      display_size_inches,
+      display_size_inches, 
       ram,
-      rom,
-      camera_rear,
-      image,
+      rom,  
+      camera_rear, 
+      image,      
     } = product;
-
-    html += `
+  
+    html += ` 
       <div class="mcard">
         <div class="mcard-top">
           <img src="images/icons/mobile/m-heart.svg" class="m-heart" alt="">
           <img src="${image}" class="mimg" alt="${title}">
           <div class="minfo">
-            <div class="mname">${title}</div>
+            <div class="mname">${title}</div> 
             <div class="mrating">
               <img src="images/icons/mobile/mob-star.svg" class="mstar">
-              <span class="mrate">(${rating_count})</span>
+              <span class="mrate"><span class="bracket" >(</span>${rating_count.toLocaleString(
+                "en-US"
+              )}<span class="bracket" >)</span></span>
               <img src="images/logos/assured.png" class="massured">
             </div>
             <div class="mprice">
-              <span class="mdiscount"><img src="images/icons/mobile/discount-arrow.svg"  class="discount-arrow" >${discount_percent}%</span>
-              <span class="mstrike">₹${original_price}</span>
-              <span class="msell">₹${price}</span>
+              <span class="mdiscount"><img src="images/icons/mobile/discount-arrow.svg"  class="discount-arrow" >${discount_percent}<img src="images/icons/mobile/percent.svg" class="percent-logo" ></span>
+              <span class="mstrike">₹${original_price.toLocaleString(
+                "en-US"
+              )}</span>
+              <span class="msell">₹${price.toLocaleString("en-US")}</span>
             </div>
             <div class="mbank">
               <img src="images/icons/mobile/wow-img.svg" alt="wow-img" class="wow-img">
-             <span class="serif" >₹9,499</span> with ${offers}
+             <span class="serif1" >₹9,499</span> with ${offers}
             </div>
             <div class="mexchange">   
-              Upto <span class="serif" >₹${exchange_offer}</span> Off on Exchange
+              Upto <span class="serif2" >₹${exchange_offer}</span> Off on Exchange
             </div>
             <div class="mwarranty">${warranty_device_years} year warranty by ${brand}</div>
           </div>
