@@ -25,7 +25,7 @@ export function renderProductsDesktop(dataArray) {
       offers,
       categories,
       image,
-    } = product;
+    } = product; 
 
     html += `
       <div class="product-card">
@@ -38,7 +38,9 @@ export function renderProductsDesktop(dataArray) {
                   <h3 class="product-title">${title}</h3>
                   <div class="product-rating">
                       <span class="rating-box">${rating} <img src="images/icons/ratings-star.svg" class="rating-star-lap" alt=""></span>
-                      <span class="rating-text">${rating_count} Ratings & ${review_count} Reviews</span>
+                      <span class="rating-text">${rating_count.toLocaleString("en-US")} Ratings & 
+                        ${review_count.toLocaleString("en-US")} Reviews
+                      </span>
                   </div>
                   <ul class="product-features">
                       <li><span class="device-prop"></span>${ram} MB RAM | ${rom} MB ROM</li>
@@ -51,24 +53,26 @@ export function renderProductsDesktop(dataArray) {
               
               <div class="product-price-details">
               <div class="price-div">
-                  <h2 class="price">₹${price}</h2>
-                  <img src="images/logos/assured.png" class="assured-img-2">
+                  <h2 class="price">₹${price.toLocaleString("en-US")}</h2>
+                  <img src="images/logos/assured.png" class="assured-img-2"> 
               </div>    
                   <div class="original-price">
-                      <span class="strike">₹${original_price}</span>
+                      <span class="strike">₹${original_price.toLocaleString(
+                        "en-US"
+                      )}</span>
                       <span class="discount-price">${discount_percent}% off</span>
                   </div>
                   <img src="images/logos/assured.png" class="assured-img-3">
                   <p class="warranty-warning">1 year warranty by ${brand}</p>
                   <p class="exchange-text">Upto <span class="exchange-amount">₹${exchange_offer}</span> Off on Exchange</p>
-                  <p class="bank-offer">${offers}</p>
+                  <p class="bank-offer">${offers}</p>  
               </div>
-
+    
           </div>
-            <label class="compare-box">
-              <input type="checkbox">
-              <span class="compare-text">Add to Compare</span>
-            </label>
+            <label class="compare-box"> 
+              <input type="checkbox">  
+              <span class="compare-text">Add to Compare</span> 
+            </label> 
     </div>`;
   });
   document.getElementById("grid-sec").innerHTML = html;
@@ -89,40 +93,44 @@ export function renderProductsMobile(dataArray) {
       flipkart_assured,
       offers,
       exchange_offer,
-      battery_capacity_mah,
+      battery_capacity_mah, 
       warranty_device_years,
-      warranty_accessories_months,
+      warranty_accessories_months, 
       display_size_cm,
-      display_size_inches,
+      display_size_inches, 
       ram,
-      rom,
-      camera_rear,
-      image,
+      rom,  
+      camera_rear, 
+      image,       
     } = product;
-
-    html += `
+  
+    html += ` 
       <div class="mcard">
         <div class="mcard-top">
           <img src="images/icons/mobile/m-heart.svg" class="m-heart" alt="">
           <img src="${image}" class="mimg" alt="${title}">
           <div class="minfo">
-            <div class="mname">${title}</div>
+            <div class="mname">${title}</div> 
             <div class="mrating">
               <img src="images/icons/mobile/mob-star.svg" class="mstar">
-              <span class="mrate">(${rating_count})</span>
+              <span class="mrate"><span class="bracket" >(</span>${rating_count.toLocaleString(
+                "en-US"
+              )}<span class="bracket" >)</span></span>
               <img src="images/logos/assured.png" class="massured">
             </div>
             <div class="mprice">
-              <span class="mdiscount"><img src="images/icons/mobile/discount-arrow.svg"  class="discount-arrow" >${discount_percent}%</span>
-              <span class="mstrike">₹${original_price}</span>
-              <span class="msell">₹${price}</span>
+              <span class="mdiscount"><img src="images/icons/mobile/discount-arrow.svg"  class="discount-arrow" >${discount_percent}<img src="images/icons/mobile/percent.svg" class="percent-logo" ></span>
+              <span class="mstrike">₹${original_price.toLocaleString(
+                "en-US"
+              )}</span>
+              <span class="msell">₹${price.toLocaleString("en-US")}</span>
             </div>
             <div class="mbank">
               <img src="images/icons/mobile/wow-img.svg" alt="wow-img" class="wow-img">
-             <span class="serif" >₹9,499</span> with ${offers}
+             <span class="serif1" >₹9,499</span> with ${offers}
             </div>
             <div class="mexchange">   
-              Upto <span class="serif" >₹${exchange_offer}</span> Off on Exchange
+              Upto <span class="serif2" >₹${exchange_offer}</span> Off on Exchange
             </div>
             <div class="mwarranty">${warranty_device_years} year warranty by ${brand}</div>
           </div>

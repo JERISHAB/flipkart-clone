@@ -1,9 +1,1 @@
-<svg width="40" height="36" viewBox="0 0 40 36" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<rect width="40" height="36" fill="url(#pattern0_153_9)"/>
-<defs>
-<pattern id="pattern0_153_9" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image0_153_9" transform="matrix(0.025 0 0 0.0277778 -0.3 -0.361111)"/>
-</pattern>
-<image id="image0_153_9" width="61" height="57" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAA5CAYAAACF8yP/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL3SURBVGhD7ZlBaxNBFIBHT8mtyanWi6iHUnsQRBAEf3xRKIjgoYoHq71YPSW5JTfdb7NPnsu23fdmZhOZ/SAkaZPJ++bNzL6Zvfe7IhTG/ea5KEbpUhilS2GULoVRuhRG6VIoUjr5huPH9a/6ebPZ1M8wmx2EefWwQDu6DfC000Uy6YvPX8JisQrrVqACwfI4enAYptNJ89d/Wa834fL7VXQ7dxEtvViuwvsPH5t3W9rZ4DPCdDIJp8+OOz9zVzt0iu6M05Pj8PDosHnXnyhphiAZFgiCQNsZQGhZPfi8BP308aO/2br8dhW+Vg+gU55U/7O0w+ctuKV1oAT48sXz+vVtkKl6GlSBAwGDtR04e3vuFndJE/zZu/P6tSVQQXeYwDBlpFigA2XhfPP6Ve857rpkXf/c/hBD0SoMZIXvCvU8NwoD35F2JKY+mKXJsmTJOpc0egFiYfMi7RATsfXBLK2z7Fk5BTqMTDFSmCJe9KjRV4nbcFdk83l8kUCnxQgLEstylUlaelPPyX0h2/CWhid7JC0JyCZtHUpDkvWSBX17dQhkyvVdH8zSs4Ntw/skbY3FLC1DiBJwH8SJQcpRtp59sM/pqmFPFZQLXTdkG97gqYJywG9LdWgplFzSugraZbZ1li0lsUsadp1tb5bBLa2zzRZvaHE5vLBmGdzSwO6IH+U6OeQwZz8u12bPDi1KmtVy6GGOrAxrTkw8G5YoadDDnIO9nOK0LYeHnmEtREsDe2KCoEjIJU6bckTFb3lObIQk0lRpOcXbwvVa0nNz0UUSacgl3iXsmceaZHc4BIKshZt6OOY4iEVLz+EUwpBcGtringP59g2AVMKQRRq6xPvef+J7eo8cs2h1kU1a0AfyCNRn1TeI01H6DkgOYcguDQxVff8JcYS0fPuuh2dK9GUQaSB7F5+qGr0Rl6zzXpeVqedvF4NJC3q4t6GkpSNyM7g0tLM+RHY1O5EWJOPW/XAsO5XeFcnK0P+JUboURulSGKXLIIQ/l3H6uje7ZPsAAAAASUVORK5CYII="/>
-</defs>
-</svg>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256"><path fill="none" d="M0 0h256v256H0z"></path><path d="M128 216S28 160 28 92a52 52 0 0 1 100-20h0a52 52 0 0 1 100 20c0 68-100 124-100 124Z" fill="#FFFFFF" stroke="#B8BBBF" stroke-linecap="round" stroke-linejoin="round" stroke-width="12px"></path></svg>
