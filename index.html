@@ -158,7 +158,7 @@
             alt=""
             class="mn-left-img"
           />
-          <span class="mn-left-text"> Sort</span>
+          <span class="mn-left-text open-sort-btn"> Sort</span>
         </div>
         <div class="vertical-line"></div>
         <div class="mn-right">
@@ -170,6 +170,41 @@
           <span class="mn-right-text">Filter</span>
         </div>
       </nav>
+
+      <div class="sort-container" id="sortContainer">
+        <div class="sort-header">SORT BY</div>
+        <div class="sort-option">
+          <label>
+           
+            <span>Popularity</span>
+            <input type="radio" name="sort" value="popularity" checked />
+          </label>
+        </div>
+        <div class="sort-option">
+          <label>
+ 
+            <span>Price -- Low to High</span>
+            <input type="radio" name="sort" value="lowToHigh" />
+          </label>
+        </div>
+        <div class="sort-option">
+          <label>
+     
+            <span>Price -- High to Low</span>
+            <input type="radio" name="sort" value="highToLow" />
+          </label>
+        </div>
+        <div class="sort-option">
+          <label>
+      
+            <span>Newest First</span>
+            <input type="radio" name="sort" value="newest" />
+          </label>
+        </div>
+      </div>
+      
+      
+
       <div id="m-filter-wrapper" class="m-filter-hidden">
         <div class="m-filter-header">
           <div class="m-filter-header-left">
@@ -404,6 +439,7 @@
           </div>
           <img src="images/icons/slider-bg.png" alt="" class="slider-bg">
           <div class="slider-wrapper">
+            <div class="slider-background"></div>
             <div class="slider-track" id="slider-track"></div>
             <input type="range" id="min-range" class="range" min="0" max="5" value="0">
             <input type="range" id="max-range" class="range" min="0" max="5" value="5">
