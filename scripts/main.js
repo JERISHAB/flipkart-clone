@@ -113,19 +113,29 @@ function renderAndSort(array) {
   const sortedArray = currentSortType
     ? sortProducts(array, currentSortType)
     : array;
+  
+  const isMobile = window.innerWidth <= 768;
+  
+  if (isMobile) {
+    renderProductsDesktop(sortedArray);
+    renderProductsMobile(sortedArray);
+  } else {
+    const totalPages = Math.ceil(sortedArray.length / PRODUCTS_PER_PAGE);
+    const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
+    const endIndex = startIndex + PRODUCTS_PER_PAGE;
+    const paginatedProducts = sortedArray.slice(startIndex, endIndex);
 
-  const totalPages = Math.ceil(sortedArray.length / PRODUCTS_PER_PAGE);
-  const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE;
-  const endIndex = startIndex + PRODUCTS_PER_PAGE;
-  const paginatedProducts = sortedArray.slice(startIndex, endIndex);
+    renderProductsDesktop(paginatedProducts);
+    renderProductsMobile(paginatedProducts);
 
-  renderProductsDesktop(paginatedProducts);
-  renderProductsMobile(paginatedProducts);
+    renderPaginationControls(totalPages, currentPage, (newPage) => {
+      currentPage = newPage;
+      renderAndSort(currentFilteredArray);
+    });
+  }
 
-  renderPaginationControls(totalPages, currentPage, (newPage) => {
-    currentPage = newPage;
-    renderAndSort(currentFilteredArray);
-  });
+
+
 }
 
 function updateFilteredAndRender(filteredArray) {
@@ -208,4 +218,31 @@ document.getElementById("m-clear-btn").addEventListener("click", () => {
 document.querySelector(".m-apply-btn").addEventListener("click", () => {
   filterPanel.classList.remove("m-filter-visible");
   filterPanel.classList.add("m-filter-hidden");
+});
+
+
+
+
+const sortContainer = document.getElementById("sortContainer");
+const openSortBtn = document.querySelector(".open-sort-btn");
+
+openSortBtn.addEventListener("click", () => {
+  sortContainer.style.display =
+    sortContainer.style.display === "block" ? "none" : "block";
+});
+
+const radios = document.querySelectorAll('input[name="sort"]');
+radios.forEach((radio) => {
+  radio.addEventListener("change", () => {
+    radios.forEach((r) =>
+      r.parentElement.parentElement.classList.remove("active")
+    );
+    radio.parentElement.parentElement.classList.add("active");
+
+    const sortType = radio.value;
+    currentSortType = sortType
+    currentPage = 1;
+    renderAndSort(currentFilteredArray);
+    sortContainer.style.display = "none"; 
+  });
 });

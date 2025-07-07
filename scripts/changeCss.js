@@ -28,12 +28,12 @@ export function updateTrack1(
 
   track.style.background = `
     linear-gradient(to right,
-     #b1b1b1  0%,
-      #b1b1b1  ${percentMin}%,
-      #2196f3 ${percentMin}%,
-      #2196f3 ${percentMax}%,
-     #b1b1b1  ${percentMax}%,
-     #b1b1b1 100%)`;
+     transparent  0%,
+      transparent  ${percentMin}%,
+      #2874f0 ${percentMin}%,
+      #2874f0 ${percentMax}%,
+     transparent  ${percentMax}%,
+     transparent 100%)`;
 
      applyFilters(originalArray, updateFilteredAndRender);
 
