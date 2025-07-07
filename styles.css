@@ -22,9 +22,9 @@
    font-style: italic
  }
 
- @font-face {  
-   size-adjust: 95%;  
-   font-display: swap; 
+ @font-face {
+   size-adjust: 95%;
+   font-display: swap;
    font-family: Inter;
    src: local("☺"), local("☺"), url(https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/fonts/Inter-Regular.woff2) format("woff2"), url(https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/fonts/Inter-Regular.woff) format("woff") url(https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/fonts/Inter-Regular.ttf) format("truetype")
  }
@@ -100,15 +100,15 @@
  }
 
  .logo-div {
-   margin-left: 11.05rem;  
+   margin-left: 11.05rem;
    padding-top: 2px;
-   display: flex;   
+   display: flex;
    flex-direction: column;
-   gap: 0;   
+   gap: 0;
  }
 
  .flipkart-logo {
-   height: 20.11px; 
+   height: 20.11px;
    width: 75px;
  }
 
@@ -118,7 +118,7 @@
  }
 
  .sub-logo {
-   font-size: 11px;   
+   font-size: 11px;
    font-style: italic;
    letter-spacing: -.1px;
 
@@ -252,33 +252,34 @@
    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.16);
    align-items: center;
    height: 40px;
-  letter-spacing: -.01px;   
- }  
+   letter-spacing: -.01px;
+ }
 
  .nav-2-downarrow {
-  height: 6px;
-  margin-bottom: -2px;
-  margin-left: 6px;
+   height: 6px;
+   margin-bottom: -2px;
+   margin-left: 6px;
  }
 
  .nav-2-div:nth-child(1) .nav-2-downarrow {
    margin-left: 6.25px;
- }   
+ }
 
  .nav-2-div:nth-child(2) {
    margin: 0 49px 0 48.75px;
    letter-spacing: .01px;
- }  
-
- .nav-2-div:nth-child(4) { 
-   margin: 0 49px 0 49.5px; 
- } 
-  
- .nav-2-div:nth-child(6) {   
-   margin: 0 48.5px 0 49.5px; 
  }
- .nav-2-div:nth-child(6) .nav-2-downarrow {    
-  margin-left: 7px;
+
+ .nav-2-div:nth-child(4) {
+   margin: 0 49px 0 49.5px;
+ }
+
+ .nav-2-div:nth-child(6) {
+   margin: 0 48.5px 0 49.5px;
+ }
+
+ .nav-2-div:nth-child(6) .nav-2-downarrow {
+   margin-left: 7px;
  }
 
  .nav-2-div:nth-child(8) {
@@ -1160,14 +1161,16 @@
    font-size: 16px;
    font-weight: 500;
    margin-right: 24px;
+   padding:0 0 2px 1px;
  }
 
  .did-you-find button {
    background-color: white;
+   font-size: 14px;
    font-family: "Inter", sans-serif;
    border-radius: 2px;
    border: 1px solid #d7d7d7;
-   padding: 6px 28px;
+   padding: 6px 28px 7px 28px;
    margin-right: 8px;
    font-weight: 500;
    box-sizing: border-box;
@@ -1180,18 +1183,19 @@
  /* Footer  */
 
  .footer {
+  box-sizing: border-box;
    background-color: #172337;
    color: white;
-   padding: 20px 0px;
+   padding: 31px 0px 18px 0px;
    font-size: 12px;
-   margin-top: 30px;
+   margin-top: 26px;
  }
 
- .footer a { 
+ .footer a {
    color: white;
-   text-decoration: none; 
-   display: block;  
-   margin: 10px 0; 
+   text-decoration: none;
+   display: block;
+   margin: 10px 0;
  }
 
  .footer-section2 a {
@@ -1202,16 +1206,16 @@
  }
 
  .footer h4 {
-   margin-bottom: 15px;
-   color: #878787;
-   font-weight: 400;
- }
+  margin-bottom: 14px;
+    color: #878787;
+    font-weight: 400;
+ } 
 
  .footer-section {
    flex: 1;
    /* min-width: 150px; */
    max-width: 166px;
-   margin: 10px;
+  margin: 10px 10.5px 10px 10px;
  }
 
  .footer-section2 {
@@ -1220,33 +1224,52 @@
    margin: 10px;
  }
 
+ .footer-section2 h4{
+  margin-bottom: 11px;
+ }
+
  .footer-top {
    display: flex;
    flex-wrap: wrap;
    border-bottom: 1px solid #454d5e;
-   padding:0 55px 30px 55px;
+   padding: 0 55px 30px 55px;
  }
 
  .footer-section2.address p {
    color: white;
-   margin: 5px 0;
+   margin: 4px 0;
  }
 
- .separator{
-  border-left: rgb(96, 96, 96) solid 1px;
-  padding-left: 25px;
-  margin-left: 12px;
+ .separator {
+  border-left: rgb(81, 81, 81) solid .5px;
+    padding-left: 25.5px;
+    margin-right: 15px;
+    margin-left: 10px;
+ }
+
+ .social-heaad{
+  display: block;
+  margin-top: 19px;
+  margin-bottom: 1px;
+  color: #878787;
  }
 
  .social-icons {
+  padding-left: 1px;
    display: flex;
-   gap: 10px;
+   align-items: center;
+   justify-content: start;
+   gap: 20px;
    margin-top: 8px;
  }
 
  .icon {
    width: 24px;
    height: 24px;
+ }
+ .icon-insta{
+  width: 20px;
+  height: 20px;
  }
 
  /* .footer-separator{
@@ -1258,10 +1281,9 @@
 
  .footer-bottom {
    display: flex;
-   justify-content: space-evenly;
+   align-items: center;
    flex-wrap: wrap;
-   margin-top: 20px;
-   padding-top: 20px 40px 0 40px;
+  padding: 15px 0px 0px 55px;
  }
 
  .bottom-links {
@@ -1269,31 +1291,64 @@
    align-items: center;
    justify-content: space-between;
    gap: 50px;
- }
-
- .bottom-links span {
+   margin: 10px 51px 0px 16px;
+ }  
+ 
+ .bottom-links span { 
    font-size: 14px;
    margin-right: 20px;
    display: inline-block;
    margin-bottom: 10px;
    color: white;
  }
+ .icon-small-seller{
+  margin-right: 4.5px;
+ }
+ .icon-small-advertise{
+  margin-left: 2px;
+  margin-right: 3.75px;
+ }
+ .icon-small-gift{
+  margin-left: 1px;
+  margin-right: 4.25px;
+ }
+ .icon-small-help{
+  margin-left: 2px;
+  margin-right: 4.25px;
+ }
 
  .bottom-right {
    display: flex;
+   align-items: center;
    justify-content: space-between;
-   gap: 50px;
+   gap: 64px;
    font-size: 14px;
  }
 
+ .bottom-right span{
+  padding-top: 3px;
+ }
+
  .payment-icons img {
+  padding-top: 5px;
    margin-left: 8px;
  }
 
- .telephone {
+ #telephone {
    display: flex;
-   justify-content: space-between;
+   justify-content: start;
+  gap: 3px;
    align-items: center;
+  margin: 0px 0;
+ } 
+
+ #telephone a {
+  margin:0 ;
+  font-weight: 500;
+ }
+
+ #m-filter-wrapper{
+  overflow-x: hidden;
  }
 
 
@@ -1301,10 +1356,29 @@
  /* css for mobile filter */
  .m-filter-header {
    display: flex;
-   justify-content: space-between;
+   justify-content: start;
    align-items: center;
-   padding: 12px;
-   border-bottom: 1px solid #ccc;
+   padding: 14px 20px 14px 12px;
+   /* border-bottom: 1px solid #ccc; */
+
+ }
+
+ .m-filter-header-left {
+   padding-top: 2px;
+   display: flex;
+   align-items: center;
+   justify-content: start;
+   gap: 22px;
+
+ }
+
+
+
+ .m-filter-header h2 {
+   font-family: "Roboto";
+   font-size: 16px;
+   font-weight: 400;
+   padding: 0 0 2px 1px;
  }
 
  .m-filter-header .m-back-btn {
@@ -1314,41 +1388,47 @@
  }
 
  #m-clear-btn {
+   font-family: "Roboto";
+   font-size: 13px;
    background: none;
-   color: #007aff;
    border: none;
-   font-weight: bold;
+   padding-bottom: 2px;
  }
 
  .m-filter-body {
    display: flex;
-   height: calc(100vh - 160px);
+   height: calc(100vh - 53px);
  }
 
  .m-filter-tabs {
-   width: 35%;
+   width: 33.2%;
    background-color: #f1f3f6;
-   border-right: 1px solid #ccc;
+   /* border-right: 1px solid #ccc; */
    overflow-y: auto;
  }
 
  .m-filter-tabs ul {
    list-style: none;
+   font-family: "Roboto";
    padding: 0;
    margin: 0;
+   overflow-y: auto;
  }
 
  .m-tab {
-   padding: 12px;
+   padding: 12px 13px 12px 16px;
+   margin-bottom: 13px;
+   height: 43px;
+   box-sizing: border-box;
    cursor: pointer;
-   border-bottom: 1px solid #ddd;
+   /* border-bottom: 1px solid #ddd; */
    font-size: 14px;
+
  }
 
  .m-tab.active {
    background-color: white;
    color: #2874f0;
-   font-weight: bold;
  }
 
  .m-count {
@@ -1359,8 +1439,62 @@
 
  .m-filter-options {
    flex: 1;
-   padding: 12px;
+   display: flex;
+   padding: 11px 12px 12px 19.25px;
    overflow-y: auto;
+ }
+
+ .m-brand-search {
+   margin: -4px 0px 20px -3px;
+   width: 191px;
+   display: flex;
+   gap: 10px;
+   align-items: center;
+   border: solid rgb(225, 225, 225) 1px;
+   padding: 10px 13px 10px 12px;
+ }
+
+ .m-brand-search img {
+   width: 18px;
+ }
+
+ .m-brand-search input { 
+   font-family: "Roboto"; 
+   font-size: 12px; 
+   border: none;
+ }
+
+ .m-brand-search input::placeholder{
+  color: rgb(176, 176, 176);
+ }
+
+ .m-ram-head{
+  display: block;
+  font-family: "Roboto Medium";
+  color: rgb(135, 135, 135);
+  font-size: 12px;
+  margin: 1px 0px 26px -3px;
+ }
+
+ .m-filter-options label input {
+   display: none;
+ }
+
+ /* checkmart */
+ .checkmark {
+   width: 14px;
+   height: 14px;
+   border: 2px solid black;
+   display: inline-block;
+   border-radius: 3px;
+   background-color: white;
+   transition: background-size 0.5s ease;
+ }
+
+ .m-filter-options input:checked+.checkmark {
+   background-image: url(images/icons/check.png);
+   background-repeat: no-repeat;
+   background-size: 100%;
  }
 
  .m-filter-content {
@@ -1372,31 +1506,50 @@
  }
 
  .m-filter-content label {
-   display: block;
-   margin-bottom: 10px;
-   font-size: 15px;
+   display: flex;
+   align-items: center;
+   gap: 19px;
+   font-family: "Roboto";
+   font-size: 14px;
+   margin-bottom: 30px;
+ }
+
+ #m-product-count{
+  font-family: "Roboto Medium";
+  display: flex;
+  flex-direction: column;
+ }
+
+ .prod-count{
+  font-size: 16px;
+ }
+
+ .found{
+  color: rgb(135, 135, 135);
+  font-size: 12px;
  }
 
  .m-filter-footer {
    position: fixed;
-   bottom: 60px;
+   box-sizing: border-box;
+   bottom: 0px;
    left: 0;
    width: 100%;
    background: white;
-   border-top: 1px solid #ccc;
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding: 12px 16px;
+   padding: 8px 8px 8px 16px;
  }
-
+ 
  .m-apply-btn {
+  font-family: "Roboto Medium";
    background-color: #ff6200;
    color: white;
-   padding: 10px 24px;
+   padding: 12px 68.5px 12px 64.5px;
    border: none;
-   border-radius: 4px;
-   font-weight: bold;
+   border-radius: 2px;
+font-size: 14px;
  }
 
  .m-bottom-nav {
@@ -1768,9 +1921,9 @@
 
    }
 
-   .mob-add { 
+   .mob-add {
      width: 100%;
-   } 
+   }
 
    /* mobile compoennt style; */
 
@@ -1783,8 +1936,8 @@
      box-sizing: border-box;
      margin-bottom: 8px;
    }
-    
-     
+
+
    .mcard-top {
      display: flex;
      position: relative;
@@ -1922,20 +2075,21 @@
    }
 
    .serif1 {
-    margin-left: 5.5px;
-    margin-right: 3px;
+     margin-left: 5.5px;
+     margin-right: 3px;
      font-family: serif;
      position: relative;
      top: 1px;
    }
+
    .serif2 {
-     font-family: serif;  
-     position: relative;  
-     top: -1px; 
+     font-family: serif;
+     position: relative;
+     top: -1px;
    }
-   
+
    .mexchange {
-    margin-left: -.25px;
+     margin-left: -.25px;
      font-size: 12px;
      font-family: Roboto;
      margin-bottom: 5px;
@@ -1955,8 +2109,8 @@
      gap: 8px;
      margin-top: 16px;
      padding-left: 6px;
-   } 
- 
+   }
+
    .mfeature {
      font-size: 12px;
      border: 1px solid #e2e2e2;
@@ -1966,10 +2120,10 @@
    }
 
    .m-heart {
-    height: 24px;
-      position: absolute;
-      right: -14px;
-      top: -12px;
+     height: 24px;
+     position: absolute;
+     right: -14px;
+     top: -12px;
    }
 
 

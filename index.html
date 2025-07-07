@@ -151,7 +151,7 @@
             <!-- <span class="mob-nav-1-login">Login</span> -->
         </div>
       </nav>
-      <nav class="mob-nav-2">
+      <nav class="mob-nav-2"> 
         <div class="mn-left">
           <img         
             src="images/icons/mobile/mob-sort-icon.svg"
@@ -163,7 +163,7 @@
         <div class="vertical-line"></div>
         <div class="mn-right">
           <img
-            src="images/icons/mobile/mob-filter-icon.svg"
+            src="images/icons/mobile/mob-filter-icon.svg"  
             alt=""
             class="mn-right-img"
           />
@@ -172,8 +172,10 @@
       </nav>
       <div id="m-filter-wrapper" class="m-filter-hidden">
         <div class="m-filter-header">
-          <button class="m-back-btn">←</button>
-          <h2>Filters</h2>
+          <div class="m-filter-header-left">
+            <button class="m-back-btn"><img src="images/icons/mobile/nav-mob-arrow.svg" alt=""></button>
+            <h2>Filters</h2>
+          </div>  
           <button id="m-clear-btn">Clear Filters</button>
         </div>
 
@@ -187,7 +189,15 @@
               <li class="m-tab" data-tab="rom">Internal Storage</li>
               <li class="m-tab" data-tab="battery">Battery</li>
               <li class="m-tab" data-tab="ratings">Customer Ratings</li>
-              <li class="m-tab" data-tab="fassured">Flipkart Assured</li>
+              <li class="m-tab" data-tab="fassured">F-Assured</li>
+              <li class="m-tab" data-tab="">Processor Brand</li>
+              <li class="m-tab" data-tab="">Speciality</li>
+              <li class="m-tab" data-tab="">Resolution Type</li>
+              <li class="m-tab" data-tab="">Network Type</li>
+              <li class="m-tab" data-tab="">Offers</li>
+              <li class="m-tab" data-tab="">Features</li>
+              <li class="m-tab" data-tab="">Availability</li>
+              <li class="m-tab" data-tab="">Operating System</li>
             </ul>
           </div>
       
@@ -196,86 +206,130 @@
             <div class="m-filter-content active" id="mobile-price-filter">
               <label>
                 <input type="checkbox" value="below10000" filterName="mobile_price" />
-                Rs. 10000 and Below
+                <span class="checkmark" ></span>
+                Rs.10000 and Below
               </label>
 
               <label>
                 <input type="checkbox" value="10000-15000" filterName="mobile_price" />
+                <span class="checkmark" ></span>
                 Rs. 10000 - Rs. 15000
               </label>
 
               <label>
                 <input type="checkbox" value="15000-20000" filterName="mobile_price" />
+                <span class="checkmark" ></span>
                 Rs. 15000 - Rs. 20000
               </label>
 
               <label>
                 <input type="checkbox" value="20000-30000" filterName="mobile_price" />
+                <span class="checkmark" ></span>
                 Rs. 20000 - Rs. 30000
               </label>
 
               <label>
                 <input type="checkbox" value="above30000" filterName="mobile_price" />
+                <span class="checkmark" ></span>
                 Rs. 30000 and Above
               </label>
             </div>
 
       
             <div class="m-filter-content" id="brand">
-              <label><input type="checkbox" filterName="brand" value="Redmi" /> Redmi</label>
-              <label><input type="checkbox" filterName="brand" value="Samsung" /> Samsung</label>
-              <label><input type="checkbox" filterName="brand" value="realme" /> Realme</label>
-              <label><input type="checkbox" filterName="brand" value="Apple" /> Apple</label>
+              <div class="m-brand-search">
+                <img src="images/icons/mobile/m-brand-search.png" alt="">
+                <input type="text" placeholder="Search Brand">
+              </div>
+              <label><input type="checkbox" filterName="brand" value="Redmi" />
+                <span class="checkmark" ></span> Redmi
+              </label>
+              <label><input type="checkbox" filterName="brand" value="Samsung" /> 
+                  <span class="checkmark" ></span> Samsung
+              </label>
+              <label><input type="checkbox" filterName="brand" value="realme" />   
+                <span class="checkmark" ></span> Realme
+              </label>
+              <label><input type="checkbox" filterName="brand" value="Apple" />   
+                <span class="checkmark" ></span> Apple
+              </label>
             </div>
       
             <div class="m-filter-content" id="ram">
-              <label><input type="checkbox" filterName="ram" value="1" /> 1 GB</label>
-              <label><input type="checkbox" filterName="ram" value="4" /> 4 GB</label>
-              <label><input type="checkbox" filterName="ram" value="6" /> 6 GB</label>
-              <label><input type="checkbox" filterName="ram" value="8" /> 8 GB</label>
+              <span class="m-ram-head" >Higher the RAM, Better the Performance</span>
+              <label><input type="checkbox" filterName="ram" value="1" />   
+                <span class="checkmark" ></span> 1 GB
+              </label>
+              <label><input type="checkbox" filterName="ram" value="4" />   
+                <span class="checkmark" ></span> 4 GB
+              </label>
+              <label><input type="checkbox" filterName="ram" value="6" />   
+                <span class="checkmark" ></span> 6 GB
+              </label>
+              <label><input type="checkbox" filterName="ram" value="8" />   
+                <span class="checkmark" ></span> 8 GB
+              </label>
             </div>
       
             <div class="m-filter-content" id="rom">
-              <label><input type="checkbox" filterName="rom" value="32" /> 32 GB</label>
-              <label><input type="checkbox" filterName="rom" value="64" /> 64 GB</label>
-              <label><input type="checkbox" filterName="rom" value="128" /> 128 GB</label>
-              <label><input type="checkbox" filterName="rom" value="256" /> 256 GB</label>
+              <label><input type="checkbox" filterName="rom" value="32" />   
+                <span class="checkmark" ></span> 32 GB
+              </label>
+              <label><input type="checkbox" filterName="rom" value="64" />   
+                <span class="checkmark" ></span> 64 GB
+              </label>
+              <label><input type="checkbox" filterName="rom" value="128" />   
+                <span class="checkmark" ></span> 128 GB
+              </label>
+              <label><input type="checkbox" filterName="rom" value="256" />   
+                <span class="checkmark" ></span> 256 GB
+              </label>
             </div>
       
             <div class="m-filter-content" id="battery">
-              <label><input type="checkbox" filterName="battery_capacity_mah" value="4000" /> 4000 mAh & Above</label>
-              <label><input type="checkbox" filterName="battery_capacity_mah" value="5000" /> 5000 mAh & Above</label>
+              <label><input type="checkbox" filterName="battery_capacity_mah" value="4000" />  
+                <span class="checkmark" ></span> 4000 mAh & Above
+              </label>
+              <label><input type="checkbox" filterName="battery_capacity_mah" value="5000" />   
+                <span class="checkmark" ></span>5000 mAh & Above
+              </label>
             </div>
       
 
             <div class="m-filter-content" id="ratings">
-              <label><input type="checkbox" filterName="rating" value="4" /> 4★ & above</label>
-              <label><input type="checkbox" filterName="rating" value="3" /> 3★ & above</label>
+              <label><input type="checkbox" filterName="rating" value="4" />  
+                <span class="checkmark" ></span> 4★ & above
+              </label>
+              <label><input type="checkbox" filterName="rating" value="3" />  
+                <span class="checkmark" ></span> 3★ & above
+              </label>
             </div>
       
             <div class="m-filter-content" id="fassured">
-              <label><input type="checkbox" filterName="flipkart_assured" value="true" /> Show only Flipkart Assured</label>
+              <label><input type="checkbox" filterName="flipkart_assured" value="true" />  
+                <span class="checkmark" ></span> F-Assured
+              </label>
             </div>
           </div>
-        </div>
+        </div> 
       
         <div class="m-filter-footer">
-          <span id="m-product-count">517 products found</span>
-          <button class="m-apply-btn">Apply</button>
-        </div>
-      </div>
-      
+          <div id="m-product-count"><span class="prod-count">9</span> <span class="found">products found</span></div> 
+          <button class="m-apply-btn">Apply</button> 
+        </div> 
+      </div>  
+           
       <div class="extra-filter-mob">
-        <div class="div-5g">
+        <div class="div-5g"> 
           <img src="images/icons/mobile/5g.svg" alt="" class="5g-img" />
         <span class="text-5g"> 5G</span> 
         </div>
-        <!-- <div class="price-range">
-          <img
-            src="images/icons/mobile/price-range.svg"
-            alt=""
-            class="price-range-img"
-          />
+        <!-- <div class="price-range">  
+          <img    
+            src="images/icons/mobile/price-range.svg"     
+            alt=""  
+            class="price-range-img"   
+          />  
           <p class="price-range-text" >Rs. 15000 - Rs. 20000</p>
         </div>
         <div class="new-launch">
@@ -555,14 +609,14 @@
         <div class="footer-section">
           <h4>CONSUMER POLICY</h4>
           <a href="#">Cancellation & Returns</a>
-          <a href="#">Terms Of Use</a>
+          <a href="#">Terms Of Use</a> 
           <a href="#">Security</a>
           <a href="#">Privacy</a>
-          <a href="#">Sitemap</a>
+          <a href="#">Sitemap</a> 
           <a href="#">Grievance Redressal</a>
           <a href="#">EPR Compliance</a>
         </div>
-        <!-- <div class="footer-separator"></div> -->
+        <!-- <div class="footer-separator"></div> --> 
         <div class="footer-section2 address separator">
           <h4>Mail Us:</h4>
           <p>Flipkart Internet Private Limited,</p>
@@ -571,12 +625,12 @@
           <p>Outer Ring Road, Devarabeesanahalli Village,</p>
           <p>Bengaluru, 560103,</p><p>Karnataka, India</p>         
           </p>
-          <h4>Social</h4>
+          <span class="social-heaad" >Social</span>
           <div class="social-icons">
             <img src="images/icons/footer/fb.svg" alt="Facebook" class="icon">
             <img src="images/icons/footer/x.svg" alt="Twitter" class="icon">
             <img src="images/icons/footer/yt.svg" alt="YouTube" class="icon">
-            <img src="images/icons/footer/ig.svg" alt="Instagram" class="icon">
+            <img src="images/icons/footer/ig.svg" alt="Instagram" class="icon-insta">
           </div>
         </div>
         <div class="footer-section2 address">
@@ -587,19 +641,19 @@
           <p> Outer Ring Road, Devarabeesanahalli Village,</p>
           <p> Bengaluru, 560103, </p>
           <p>Karnataka, India</p>
-          <p> CIN: U51109KA2012PTC066107</p>
-            <p class="telephone" >
-            Telephone: <a href="#">044-45614700</a> / <a href="#">044-67415800</a>
+          <p> CIN : U51109KA2012PTC066107</p>
+            <p id="telephone" >
+            Telephone:<a href="#">044-45614700</a>/<a href="#">044-67415800</a>
           </p>
-        </div>
-      </div>
-  
+        </div> 
+      </div> 
+     
       <div class="footer-bottom">
         <div class="bottom-links">
-          <span><img src="images/icons/footer/suite.svg" alt="Seller Icon" class="icon-small"> Become a Seller</span>
-          <span><img src="images/icons/footer/star.svg" alt="Advertise Icon" class="icon-small"> Advertise</span>
-          <span><img src="images/icons/footer/svgexport-20.svg" alt="Gift Icon" class="icon-small"> Gift Cards</span>
-          <span><img src="images/icons/footer/question-mark.svg" alt="Help Icon" class="icon-small"> Help Center</span>
+          <span><img src="images/icons/footer/suite.svg" alt="Seller Icon" class="icon-small-seller"> Become a Seller</span>
+          <span><img src="images/icons/footer/star.svg" alt="Advertise Icon" class="icon-small-advertise"> Advertise</span>
+          <span><img src="images/icons/footer/svgexport-20.svg" alt="Gift Icon" class="icon-small-gift"> Gift Cards</span>
+          <span><img src="images/icons/footer/question-mark.svg" alt="Help Icon" class="icon-small-help"> Help Center</span>
         </div>
         <div class="bottom-right">
           <span>© 2007-2025 Flipkart.com</span>
@@ -613,4 +667,3 @@
     <script type="module" src="./scripts/main.js"></script>
   </body>
 </html>
-  
