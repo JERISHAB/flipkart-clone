@@ -172,39 +172,40 @@
       </nav>
 
       <div class="sort-container" id="sortContainer">
-        <div class="sort-header">SORT BY</div>
-        <div class="sort-option">
-          <label>
-           
-            <span>Popularity</span>
-            <input type="radio" name="sort" value="popularity" checked />
-          </label>
-        </div>
-        <div class="sort-option">
-          <label>
- 
-            <span>Price -- Low to High</span>
-            <input type="radio" name="sort" value="lowToHigh" />
-          </label>
-        </div>
-        <div class="sort-option">
-          <label>
-     
-            <span>Price -- High to Low</span>
-            <input type="radio" name="sort" value="highToLow" />
-          </label>
-        </div>
-        <div class="sort-option">
-          <label>
-      
-            <span>Newest First</span>
-            <input type="radio" name="sort" value="newest" />
-          </label>
-        </div>
-      </div>
-      
-      
+        <div class="m-sort-wrapper">
+          <div class="sort-header">SORT BY</div>
+          <div class="sort-option">
+            <label>
+             
+              <span>Popularity</span>
+              <input type="radio" name="sort" value="popularity" checked />
+            </label>
+          </div>
+          <div class="sort-option">
+            <label>
 
+              <span>Price -- Low to High</span>
+              <input type="radio" name="sort" value="lowToHigh" />
+            </label>
+          </div>
+          <div class="sort-option">
+            <label>
+       
+              <span>Price -- High to Low</span>
+              <input type="radio" name="sort" value="highToLow" />
+            </label>
+          </div>
+          <div class="sort-option">
+            <label>
+        
+              <span>Newest First</span>
+              <input type="radio" name="sort" value="newest" />
+            </label>
+          </div>
+        </div>
+        
+      </div>
+ 
       <div id="m-filter-wrapper" class="m-filter-hidden">
         <div class="m-filter-header">
           <div class="m-filter-header-left">
@@ -238,7 +239,7 @@
       
           <div class="m-filter-options">
             
-            <div class="m-filter-content active" id="mobile-price-filter">
+            <div class="m-filter-content active" id="price">
               <label>
                 <input type="checkbox" value="below10000" filterName="mobile_price" />
                 <span class="checkmark" ></span>
@@ -249,7 +250,7 @@
                 <input type="checkbox" value="10000-15000" filterName="mobile_price" />
                 <span class="checkmark" ></span>
                 Rs. 10000 - Rs. 15000
-              </label>
+              </label> 
 
               <label>
                 <input type="checkbox" value="15000-20000" filterName="mobile_price" />
@@ -703,3 +704,6 @@
     <script type="module" src="./scripts/main.js"></script>
   </body>
 </html>
+
+
+
