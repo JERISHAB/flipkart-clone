@@ -167,7 +167,6 @@ export function renderFilterTag(filterMap) {
       } else {
         min = prices[filters[0]].toString();
       }
-
       html += `  <span class="filter-tag">
           <span class="remove-tag">✕</span>${min}-${max}
        </span>`;
@@ -175,10 +174,23 @@ export function renderFilterTag(filterMap) {
     } else {
       console.log("filters : ", filters);
       for (let i = 0; i < filters.length; i++) {
+
+        const value = filters[i]
+
         console.log("filter : ", filters[i]);
+        const input = document.querySelector(`input[filterName ="${key}"][value="${value}"]`)
+
+        let labelText = value;
+
+        if (input) {
+          const label = input.closest("label");
+          if (label) {
+            labelText = label.innerText
+          }
+        }
 
         html += `  <span class="filter-tag">
-          <span class="remove-tag">✕</span>${filters[i]}
+          <span class="remove-tag">✕</span>${labelText}
        </span>`;
       }
     }

@@ -181,10 +181,6 @@ backButton.addEventListener("click", () => {
   filterPanel.classList.add("m-filter-hidden");
 });
 
-
-
-
-
 // mobile filter
 document.querySelectorAll('.m-tab').forEach(tab => {
   tab.addEventListener('click', () => {
@@ -228,7 +224,7 @@ const openSortBtn = document.querySelector(".open-sort-btn");
 
 openSortBtn.addEventListener("click", () => {
   sortContainer.style.display =
-    sortContainer.style.display === "block" ? "none" : "block";
+    sortContainer.style.display === "flex" ? "none" : "flex";
 });
 
 const radios = document.querySelectorAll('input[name="sort"]');
