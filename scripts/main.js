@@ -133,9 +133,6 @@ function renderAndSort(array) {
       renderAndSort(currentFilteredArray);
     });
   }
-
-
-
 }
 
 function updateFilteredAndRender(filteredArray) {
@@ -209,6 +206,14 @@ document.getElementById("m-clear-btn").addEventListener("click", () => {
   applyFilters(originalArray, updateFilteredAndRender);
 });
 
+document.getElementById("clear-btn").addEventListener("click", () => {
+  document
+    .querySelectorAll('input[type="checkbox"]')
+    .forEach((cb) => (cb.checked = false));
+
+  applyFilters(originalArray, updateFilteredAndRender);
+});
+
 
 
 document.querySelector(".m-apply-btn").addEventListener("click", () => {
@@ -242,3 +247,4 @@ radios.forEach((radio) => {
     sortContainer.style.display = "none"; 
   });
 });
+
