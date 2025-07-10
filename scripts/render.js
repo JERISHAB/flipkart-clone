@@ -232,3 +232,4 @@ export function renderPaginationControls(
     paginationContainer.appendChild(nextBtn);
   }
 }
+
